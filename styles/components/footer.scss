@@ -1,0 +1,231 @@
+footer {
+	padding: 80px 30px 35px;
+	background-color: #000;
+	color: #fff;
+	box-sizing: border-box;
+	@media screen and (max-width: 1200px) {
+		padding: 40px 30px 20px;
+	}
+	.footer {
+		display: flex;
+		max-width: 1150px;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		@media screen and (max-width: 1200px) {
+			max-width: 320px;
+		}
+
+		&__list {
+			display: inherit;
+			margin-right: 300px;
+			padding: 0;
+			@media screen and (max-width: 1200px) {
+				display: none;
+			}
+			&__items {
+				margin-right: 100px;
+				&:last-child {
+					margin-right: 0;
+				}
+				.tittle {
+					text-transform: uppercase;
+					font-weight: 800;
+					font-size: 16px;
+					line-height: 30px;
+					margin-bottom: 20px;
+				}
+				.items__list {
+					padding: 0;
+					&_item {
+						font-weight: 500;
+						font-size: 14px;
+						line-height: 17px;
+						padding: 15px 0;
+					}
+				}
+			}
+		}
+
+		.subscribe {
+			max-width: 345px;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			position: relative;		
+			transition: 0.3s;
+			&.success {
+				height: 237px;
+			}	
+			.wrapper {
+				display: flex;
+				height: auto;
+				transition: 0.3s;
+				@media screen and (max-width: 1200px) {
+					max-height: 164px;
+				}
+				&.hidden {
+					opacity: 0;
+					visibility: hidden;
+				}
+				&:focus {
+					.subscribe__button {
+						opacity: 1;
+					}
+				}
+			}
+			&__tittle {
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 22px;
+				margin-bottom: 10px;
+				@media screen and (max-width: 1200px) {
+					font-size: 16px;
+					line-height: 20px;
+				}
+			}
+			&__text {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 24px;
+				opacity: 0.5;
+				margin-bottom: 20px;
+			}
+			&__input-block {
+				width: 100%;
+				position: relative;
+				display: inherit;
+				align-items: center;
+				border-bottom: 1px solid #fff;
+				font-size: 14px;
+				line-height: 17px;
+				fill: #fff;
+				margin-bottom: 0;
+				&.error {
+					border-bottom: 1px solid #EB5757;
+				}
+				&:after {
+					right: 30px;
+				}
+				.input {
+					width: 100%;
+					color: #fff;
+					background: none;
+					border: none;					
+					height: 49px;
+				}
+			}
+			&__button {
+				width: 60px;
+				height: 20px;
+				opacity: 0.25;
+				transform: translateX(13px);
+				cursor: pointer;
+				transition-duration: 0.3s;
+				&:hover { 
+					opacity: 1;
+				}
+
+				.icon {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.success {
+				font-size: 14px;
+				line-height: 24px;
+				color: #ffffff80;
+				width: 100%;
+				max-width: 360px;
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				top: 30px;
+				transition: 0.3s;
+				transition-delay: 0.2s;
+				&.active {
+					visibility: visible;
+					opacity: 1;
+				}
+				.text {
+					&:first-child {
+						margin-bottom: 20px;
+					}
+					.mail {
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		.copyright {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			font-weight: 500;
+			align-items: center;
+			margin-top: 105px;
+			font-size: 14px;
+			@media screen and (max-width: 1200px) {
+				flex-wrap: wrap;
+				font-size: 13px;
+				line-height: 16px;
+				margin-top: 45px;
+			}
+
+			.site_name {
+				opacity: 0.5;
+				width: 160px;
+				@media screen and (max-width: 1200px) {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+			&__link {
+				width: 100px;
+				@media screen and (max-width: 1200px) {
+					width: 120px;
+					margin-bottom: 10px;
+					&:nth-child(3n) {
+						margin-right: 0;
+					}
+				}
+			}
+			.email {
+				width: 160px;
+				@media screen and (max-width: 1200px) {
+					width: 120px;
+					margin-bottom: 32px;
+				}
+			}
+			.fb {
+				width: 86px; 
+				height: 30px;
+				fill: #fff;
+				&_logo {
+					width: 100%; max-width: 30px;
+					height: 100%;
+				}
+				@media screen and (max-width: 1200px) {
+					width: 120px;
+					margin-bottom: 32px;
+				}
+			}
+			&__developed {
+				width: 224px;
+				text-align: end;
+				.dark {
+					opacity: 0.5;
+				} 
+				@media screen and (max-width: 1200px) {
+					text-align: start;
+				}
+			}
+		}
+	}
+}
+.main-footer {
+	padding-top: 330px;
+	@media screen and (max-width: 1200px) {
+		padding-top: 40px;
+	}
+}

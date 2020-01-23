@@ -1,0 +1,38 @@
+.popup.js_popup.js_login
+	form.in.js_in-form(action="/" novalidate="true")
+		.close.js_close
+		h3.tittle Sign In
+		include social-links.pug
+		p.variant or
+		-
+			var blocks = [
+				{
+					class:'',
+					input_class:'field',
+					type:'email',
+					placeholder:'Email',
+					error_msg: 'wrong email address',
+					required: true,
+				},
+				{
+					class:'pass',
+					input_class:'field js_password',
+					type:'password',
+					placeholder:'Password',
+					img:'../img/symbol_sprite.svg#icon-eye_1',
+					error_msg: 'Wrong password',
+					required: true,
+				}
+			]
+		each block in blocks
+			include input-block.pug
+		.checkbox-block.js_box
+			.checkbox.js_check
+			input(
+				type="checkbox"
+				class="js_checkbox input-field"
+			)
+			p.label.js_check Keep me signeed in
+		a.forgot-pass.js_reset-pass Forgot password?
+		button.button.sign-in(type="submit") Sign In
+		a.sign-up(href="signUp.html") Create an Account

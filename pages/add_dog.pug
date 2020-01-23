@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'My account', link:''}, {name:'Add a dog', link:''}]
+			include components/crumbs.pug
+			section.add-dog
+				.wrap
+					h1.add-dog__title Add a dog
+					a.add-dog__back-link_mobile
+						svg.add-dog__back-link_mobile__arrow
+							use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+						p.add-dog__back-link_mobile__text Back to my account
+					form.add-dog__description
+						// .add-dog__dropzone_mobile.js-swiper(id="dropzone_mobile")
+						// 	p.add-dog__dropzone-message Add <span class='dark'> dog's photo</span>
+						.add-dog__dropzone-wrapper
+							.add-dog__dropzone(id="dropzone")
+								p.add-dog__dropzone-message Drag and drop<span class='dark'> dog's photo</span> here or select a files
+								p.add-dog__dropzone-message_mobile.add-dog__dropzone-message_mobile Add <span class='dark'> dog's photo</span>
+						.radio-block
+							input.radio(type="radio" name="privacy" id="public" checked)
+							label.radio__label(for="public") The dog is available for everyone
+						.radio-block
+							input.radio(type="radio" name="privacy" id="private")
+							label.radio__label(for="private") Private dog
+							.radio-block__hint
+								p.radio-block__hint-paragraph Выберите этот вариант, если хотите скрыть собаку от других пользователей.
+								p.radio-block__hint-paragraph Собаки, которых видите только вы недоступны для просмотра другим пользователям. Они не смогут купить её у вас или заказать стад сервис.
+						.add-dog__description__main-info
+							-
+								var blocks = [
+									{
+										class:'important',
+										input_class:'field',
+										type:'text',
+										placeholder:'Name',
+										error_msg:'Введите корректные данные'
+									},
+									{
+										class:'birthday',
+										input_class:'field',
+										type:'text',
+										placeholder:'Birth day',
+										error_msg:'Введите корректные данные'
+									}
+								]
+							each block in blocks
+								include components/input-block.pug
+							.gender-block
+								.title
+									p.gender Gender
+								.radio-block.male
+									input.radio(type="radio" name="gender" id="male")
+									label.radio__label.male(for="male")
+										svg.radio__label-icon
+											use(xlink:href="../img/symbol_sprite.svg#icon-male")
+								.radio-block.female
+									input.radio(type="radio" name="gender" id="female")
+									label.radio__label.female(for="female")
+										svg.radio__label-icon
+											use(xlink:href="../img/symbol_sprite.svg#icon-female")
+							-
+								var boxs = [
+									{
+										class:'dropbox important js_box', 
+										label:'Country', 
+										list : [
+											{
+												name: 'Breed',
+												value: '',
+												selected: true,
+											},
+											{
+												name: 'French Bulldog',
+												value: 'French Bulldog',
+												selected: false,
+											},
+											{
+												name: 'English bulldog',
+												value: 'English bulldog',
+												selected: false,
+											},
+											{
+												name: 'Pug',
+												value: 'Pug',
+												selected: false,
+											},
+											{
+												name: 'Shnauzer',
+												value: 'Shnauzer',
+												selected: false,
+											},
+										],
+										img:'../img/symbol_sprite.svg#icon-down-arrow',
+										msg: "Выберите породу"
+									}
+								]
+							each box in boxs
+								.dropbox.important.field
+									select.select__input.js-select(required, error-msg= box.msg, name= box.label)
+										each option_value in box.list
+											option.select__input-option(value= option_value.value selected= option_value.selected)= option_value.name
+							-
+								var blocks = [
+										{
+											class:'color important',
+											input_class:'field',
+											type:'text',
+											placeholder:'Color',
+											error_msg:'Введите корректные данные'
+										}
+									]
+							each block in blocks
+								include components/input-block.pug
+							-
+								var blocks = [
+										{
+											class:'js_sale',
+											boxClass:'sale',
+											labelClass:'js_sale',
+											label:'For sale'
+										},
+										{
+											class:'js_stud',
+											boxClass:'stud',
+											labelClass:'js_sale',
+											label:'For stud service'
+										}
+									]
+							each block in blocks
+								include components/checkbox.pug
+						.add-dog__description__details
+							p.add-dog__description__details-title Details
+							-
+								var blocks = [
+										{
+											class:'js_sale',
+											boxClass:'',
+											labelClass:'js_sale',
+											label:'Registered AKC/FCI'
+										},
+										{
+											class:'js_sale',
+											boxClass:'',
+											labelClass:'js_sale',
+											label:'Registered other pedigree'
+										},
+										{
+											class:'js_sale',
+											boxClass:'',
+											labelClass:'js_sale',
+											label:'Health certificate'
+										},
+										{
+											class:'js_sale',
+											boxClass:'',
+											labelClass:'js_sale',
+											label:'Health guarantee'
+										},
+										{
+											class:'js_sale',
+											boxClass:'',
+											labelClass:'js_sale',
+											label:'Shipping included'
+										}
+									]
+							each block in blocks
+								include components/checkbox.pug
+							.input-block.textarea
+								textarea(class="field" maxlength="285" placeholder="Info")
+						.add-dog__description__genom-block
+							h1.genom-block__title DNA
+							-
+								var genomsBlock = [
+									{
+										title: "Agouti",
+										genoms: ["At","Ay","a"],
+									},
+									{
+										title: "Brown",
+										genoms: ["B","b"],
+									},
+									{
+										title: "Dilute",
+										genoms: ["D","d"],
+									},
+									{
+										title: "Dominant black",
+										genoms: ["Kbr","Ky"],
+									},
+									{
+										title: "MCR1",
+										genoms: ["E","e", "Em"],
+									},
+									{
+										title: "Pied",
+										genoms: ["N","S"],
+									},
+								]
+							.genom-block__table
+								each block in genomsBlock
+									.genom-block__table__row
+										each genom in block.genoms
+											.genom-block__table__cell
+												input.genom-block__table__checkbox(type="radio" name= block.title + "Left" id= genom + "Left")
+												label.genom-block__table__checkbox-label.genom(for= genom + "Left")= genom
+										.genom-block__table__cell.title= block.title
+										each genom in block.genoms
+											.genom-block__table__cell
+												input.genom-block__table__checkbox(type="radio" name= block.title + "Right" id= genom + "Right")
+												label.genom-block__table__checkbox-label.genom(for= genom + "Right")= genom
+							.genom-block__table_mobile
+								each block in genomsBlock
+									.genom-block__table__row-title
+										.genom-block__table__cell.title= block.title
+									.genom-block__table__row
+										each genom in block.genoms
+											.genom-block__table__cell
+												input.genom-block__table__checkbox(type="radio" name= block.title + "Left" id= genom + "LeftMobile")
+												label.genom-block__table__checkbox-label.genom(for= genom + "LeftMobile")= genom
+										.genom-block__table__cell.title
+										each genom in block.genoms
+											.genom-block__table__cell
+												input.genom-block__table__checkbox(type="radio" name= block.title + "Right" id= genom + "RightMobile")
+												label.genom-block__table__checkbox-label.genom(for= genom + "RightMobile")= genom
+							.help.js_help
+									svg.icon
+										use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+									a.help__link.js_help-block(href="") 
+										p.text About genotype
+										svg.arrow
+											use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+						button.button Add a Dog
+		footer
+			include components/footer.pug

@@ -1,0 +1,19 @@
+.genom-block(class= block.class)
+							h1.genom-block__title= block.title
+							.genom-block__table
+								each element in block.content
+									.genom-block__table__row
+										each genom in element.elements
+												.genom-block__table__cell(class= genom.class)= genom.name
+							.genom-block__table_mobile
+								each element in block.content
+									.genom-block__table__row-title
+										each genom in element.elements
+											if genom.class === "title"
+												.genom-block__table__cell(class="title")= genom.name
+									.genom-block__table__row
+										each genom, index in element.elements
+											if genom.class === "genom"
+												.genom-block__table__cell(class= genom.class)= genom.name
+											else
+												.genom-block__table__cell(class="title")

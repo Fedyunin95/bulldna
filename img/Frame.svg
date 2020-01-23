@@ -1,0 +1,17 @@
+<svg width="700" height="500" viewBox="0 0 700 500" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0)">
+<rect width="700" height="500" fill="black" fill-opacity="0"/>
+<g style="mix-blend-mode:overlay">
+<rect x="-93" y="-118" width="1000" height="1000" fill="url(#pattern0)"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.102" height="0.102">
+<use xlink:href="#image0" transform="scale(0.001)"/>
+</pattern>
+<clipPath id="clip0">
+<rect width="700" height="500" fill="white"/>
+</clipPath>
+<image id="image0" width="102" height="102" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABmCAYAAAA53+RiAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACeSURBVHgB7duxDcJAEETRETRAKXTElUGbVEBMZDqARXJg7AJug/ekDTb7DUySjLql7ll3yzxDx79fwGe9JfPo2DjVXTb/O/Po2DjXvequ63+ve2QOHQAAAAAAAAAAAAAAQHMjllwdOyy5OnZYlB1ZlO3oAAAAAAAAAAAAAAAAmhux5OrYYcnVscOi7MiibEcHAAAAAAAAAAAAAADQ2BeLc1ej6A7utgAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>

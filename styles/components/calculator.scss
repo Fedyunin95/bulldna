@@ -1,0 +1,978 @@
+.calculator {
+	max-width: 1160px;
+	margin: 0 auto;
+	&-wrapper {
+		margin: 80px auto 0;
+		padding-bottom: 120px;
+		@media screen and (max-width: 1200px) {
+			margin:  40px auto 0;
+			padding-bottom: 100px;
+			display: none;
+		}
+		&_mobile {
+			display: none;
+			@media all and (max-width: 1200px) {
+				display: block;
+				min-height: 250px;
+				margin: 30px auto 60px;
+			}
+
+			.title {
+				max-width: 1160px;
+				margin: 0 auto 40px;
+				text-align: center;
+				font-size: 40px;
+				font-weight: bold;
+				line-height: 50px;
+				@media screen and (max-width: 1200px	){
+					padding: 0 10px;
+					text-align: left;
+					font-size: 30px;
+					line-height: 44px;
+					max-width: 300px;
+				}
+			}
+		}
+		.title {
+			max-width: 1160px;
+			margin: 0 auto 40px;
+			text-align: center;
+			font-size: 40px;
+			font-weight: bold;
+			line-height: 50px;
+			@media screen and (max-width: 1200px	){
+				padding: 0 30px;
+				text-align: left;
+				font-size: 30px;
+				line-height: 44px;
+				max-width: 260px;
+			}
+		}
+	}
+	&__steps-wrapper {
+		border-bottom: 1px solid #e5e5e5;
+		margin-bottom: 40px;
+	}
+	&__steps {
+		max-width: 1160px;
+		margin: 0 auto;
+		display: flex;
+		min-height: 172px;
+		align-items: flex-end;
+		position: relative;
+		&__item {
+			display: flex;
+			margin-right: 40px;
+			align-self: center;
+			position: relative;
+			min-width: 260px;
+			transition: 0.5s;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:after {
+				transform: scaleX(0);
+				transition: 0.5s;
+				transform-origin: left;
+			}
+			&.active {
+				transition: 0.5s;
+				.title {
+					color: #804D6F;
+				}
+				&:after {
+					content: '';
+					transition-delay: 0.5s;
+					transition-duration: 0.5s;
+					position: absolute;
+					width: 100%;
+					height: 9px;
+					background-color: #804D6F;
+					left: 0; bottom: -120%;
+					transform: scaleX(1);
+				}
+			}
+			& .title {
+				font-size: 15px;
+				line-height: 26px;
+				color: #666;
+				max-width: 100%;
+				margin-top: 15px;
+				text-align: left;
+				margin: 0;
+				font-weight: normal;
+				font-weight: 500;
+			}
+			&-number {
+				display: flex;
+				align-self: flex-end;
+				justify-content: flex-end;
+				width: 160px;
+				position: absolute;
+				right: 0;  top: -60px;
+				font-size: 200px;
+				line-height: 1;
+				font-weight: 800;
+				color: #f2f2f2;
+				z-index: -1;
+			}
+		}
+	}
+	&__instruction-block {
+		position: relative;
+		width: 100%; min-height: 100px;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 60px;
+		&__title {
+			font-size: 20px;
+			line-height: 39px;
+			font-weight: 600;
+			border-bottom: 2px dashed #000;
+			cursor: pointer;
+		}
+		&__instruction {
+			position: absolute;
+			width: 100%;
+			background-color: #fff;
+			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
+			border-radius: 10px;
+			border: 1px solid #F2F2F2;
+			padding: 60px 100px;
+			box-sizing: border-box;
+			z-index: 1;
+			top: 100%;
+			transition: 0.5s;
+			transform: translateY(0);
+			visibility: hidden;
+			opacity: 0;
+			&.show {
+				display: block;
+				visibility: visible;
+				opacity: 1;
+				transform: translateY(20px);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 40px;
+				top: -40px;
+				border: 20px solid transparent;
+				border-bottom: 20px solid #fff;
+				left: 50%;
+				transform: translateX(-50%);
+				box-sizing: border-box;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				width: 40px;
+				top: -44px;
+				border: 22px solid transparent;
+				border-bottom: 22px solid #F2F2F2;
+				left: 50%;
+				transform: translateX(-50%);
+				box-sizing: border-box;
+			}
+			.instruction {
+				&-text {
+					font-size: 16px;
+					line-height: 31px;
+					font-weight: 500;
+					margin-bottom: 40px;
+				}
+				&-quote {
+					max-width: 760px;
+					padding-left: 36px;
+					border-left: 4px solid #F2C94C;
+					margin: 0 100px 40px 60px;
+					font-size: 14px;
+					line-height: 2;
+					font-family: 'merriweather';
+				}
+				&-title {
+					display: flex;
+					width: auto;
+					font-size: 16px;
+					line-height: 30px;
+					margin: 0 0 30px 100px;
+					font-weight: bold;
+				}
+				&__list {
+					max-width: 900px;
+					margin-left: 60px;
+					&__item {
+						display: flex;
+						font-size: 14px;
+						line-height: 27px;
+						font-weight: 500;
+						&-number {
+							min-width: 30px;
+							margin-right: 10px;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__my-dogs, &__favorite-dogs {
+		margin-bottom: 100px;
+		&__header {
+			display: flex;
+			align-items: center;
+			font-size: 30px;
+			line-height: 1;
+			margin-bottom: 40px;
+		}
+		&__title {
+			font-weight: bold;
+		}
+		&__value {
+			margin-left: 10px;
+			font-weight: 500;
+			opacity: 0.25;
+		}
+		&__body {
+			width: 100%;
+			height: 420px;			
+			box-sizing: border-box;
+			border-radius: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;			
+			&.empty {
+				padding: 80px 0 100px;
+				border: 2px dashed rgba(0, 0, 0, 0.25);
+				background-color: #F2F2F240;
+			}
+		}
+		.icon {
+			width: 100px; height: 100px;
+			margin: 0 auto 30px;
+		}
+		&_empty__add-button {
+			margin: 0 auto;
+			max-width: 300px;
+			height: 60px;
+			background-color: #fff;
+			color: #000;
+			border: 3px solid #000;
+			box-sizing: border-box;
+			.button__link {
+				display: flex;
+				width: 100%; height: 100%;
+				background-color: #fff;
+				align-items: center;
+				justify-content: center;
+			}
+			&:after {
+				background-color: #000;
+				border: none;
+			}
+		}
+		&_empty__message {
+			width: 100%;
+			min-height: 50px;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+	&__favorite-dogs {
+		.icon {
+			width: 112px;
+		}
+	}
+	&__gender-blocks {
+		display: flex;
+		margin-bottom: 60px;
+		&__item {
+			width: 560px; min-height: 260px;
+			margin-right: 40px;
+			&:last-child {
+				margin-right: 0;
+			}
+			&_center {
+				margin-left: auto;
+				margin-right: auto;
+				&:last-child {
+					margin-right: auto;
+				}
+			}
+			.add-dog__description__genom-block {
+				margin-bottom: 0;
+			}
+			&__header {
+				display: flex;
+				height: 60px;
+				align-items: center;
+				border-radius: 10px 10px 0px 0px;
+				padding: 15px;
+				box-sizing: border-box;
+				font-size: 16px;
+				line-height: 31px;
+				font-weight: 600;
+				fill: #fff;
+				&.male {
+					background: linear-gradient(to top, #DAE6F2, #DAE6F2), #C2DAF2;
+				}
+				&.female {
+					background: linear-gradient(0deg, #F2DAE2, #F2DAE2), #F2C2D2;
+				}
+			}
+			&__icon {
+				width: 30px;
+				height: 30px;
+				margin-right: 17px;
+			}
+			&__body{
+				min-height: 200px;
+				background-color: #F2F2F240;
+				box-sizing: border-box;
+				border: 1px solid #E6E6E6;
+				overflow: hidden;
+				border-radius: 0 0 10px 10px;
+				
+				&_location {
+					padding-top: 20px;
+					background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #F2F2F2;
+					border: 1px solid #E6E6E6;
+					border-radius: 0 0 10px 10px;
+					.dropbox {
+						max-width: 500px;
+						height: 60px;
+						margin-bottom: 20px;
+						.label {
+							height: 60px;
+						}
+						&:last-child {
+							margin-bottom: 40px;
+						}
+						.icon {
+							top: unset; bottom: 15px;
+						}
+					}
+				}
+
+
+				&__dog-block {
+					display: flex;
+					width: 100%; max-height: 200px;
+					border-bottom: 1px solid #E6E6E6;
+					padding: 20px 30px;
+					box-sizing: border-box;
+					&_v2 {
+						padding: 0;
+						display: flex;
+					}
+					&:last-child {
+						border-bottom: none;
+					}
+					&__title {
+						width: 100%; min-height: 20px;
+						margin-bottom: 10px;
+						font-size: 16px;
+						line-height: 20px;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						font-weight: bold;
+						color: #333;
+					}
+					&__info-wrapper {
+						color: #999;
+						font-size: 14px;
+						line-height: 20px;
+						font-weight: 500;
+						margin-bottom: 10px;
+						&__text {
+							min-height: 25px;
+						}
+					}
+					&__genom-wrapper {
+						width: 100%;
+						color: #333;
+						font-size: 14px;
+						line-height: 17px;
+						min-height: 20px;
+						margin-bottom: 14px;
+						font-weight: 600;
+						display: flex;
+						align-items: center;
+						.help {
+							position: relative;
+							margin-left: 30px;
+						}
+					}
+					&__info-gender {
+						&.male {
+							width: 30px; height: 30px;
+							fill: #5CA1E6;
+						}
+						&.female {
+							width: 22px; height: 36px;
+							fill: #E55C8A;
+						}
+					}
+				}
+				&__image {
+					width: 160px;height: 160px;
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+					border-radius: 50%;
+					min-width: 160px;
+					margin-right: 40px; 
+				}
+				&.empty {
+					font-size: 14px;
+					line-height: 24px;
+					font-weight: 500;
+					color: #999;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 2px dashed rgba(0, 0, 0, 0.25);
+					border-top: none;
+				}
+			} 
+			.male {
+				.genom-block__title {
+					background: linear-gradient(0deg, #DAE6F2, #DAE6F2), #C2DAF2;					
+				}
+				.genom-block__table__checkbox:checked ~ .genom {
+					background: #C2DAF2;
+				}
+				.genom {
+					&:hover{
+						background: #C2DAF2;
+					}
+				}
+			}
+			.female {
+				.genom-block__title {
+					background: linear-gradient(0deg, #F2DAE2, #F2DAE2), #F2C2D2;
+				}
+				.genom-block__table__checkbox:checked ~ .genom {
+					background: linear-gradient(0deg, #F2C2D2, #F2C2D2);
+				}
+				.genom {
+					&:hover{
+						background: linear-gradient(0deg, #F2C2D2, #F2C2D2);
+					}
+				}
+			}
+		}
+	}
+	&__calculate-button {
+		max-width: 300px;
+		height: 60px;
+		margin: 0 auto;
+	}
+	&__dog-block {
+		width: 25%;
+		max-width: 260px;
+		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+		height: 100%;
+		margin-right: 40px;
+		position: relative;
+		cursor: pointer;
+		&__like {
+			position: absolute;
+			width: 30px; height: 26px;
+			top: 15px; right: 15px;
+			fill: #FF0055;
+		}
+		&__image {
+			width: 100%; height: 260px;
+			max-height: 260px;
+			margin-bottom: 20px;
+		}
+		&__title {
+			padding: 0 20px;
+			font-size: 18px;
+			line-height: 20px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		&__info {
+			padding: 0 20px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			&-gender {
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+				&.male {
+					fill: #5CA1E5;
+				}
+				&.female {
+					fill: #E55C8A;	
+				}
+			}
+			&-wrapper {
+				width: 100%;
+				max-width: 180px;
+				font-size: 14px;
+				line-height: 25px;
+				color: #999;
+				font-weight: 500;
+			}
+		}
+		&__genom-wrapper {
+			position: relative;
+			padding: 0 20px;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 600;
+			&__gens {
+				max-width: 200px;
+			}
+			.help {
+				top: 0;
+				.icon {
+					width: 100%; height: 100%;
+				}
+			}
+		}
+		&.choose {
+			&:before {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		&:before {
+			content: '';
+			width: 100%; height: 100%;
+			position: absolute;
+			background-color: #000;
+			opacity: 0.25;
+			border-radius: 10px;
+			z-index: 1;
+			transition: 0.4s;
+		}
+	}
+	&__result-dogs {
+		margin-top: 100px;
+		&__title {
+			width: 100%;
+			text-align: center;
+			font-size: 30px;
+			line-height: 50px;
+			min-height: 50px;
+			font-weight: bold;
+			margin-bottom: 80px;
+		}
+		&__header-wrap {
+			border-bottom: 1px solid #E5E5E5;
+			padding-bottom: 20px;
+			margin-bottom: 40px;
+			&__content {
+				display: flex;
+				max-width: 1100px;
+				margin: 0 auto;
+				&-cell {
+					width: 160px;
+					margin-right: 40px;
+					min-height: 40px;
+					color: #999;
+					font-weight: 600;
+					font-size: 16px;
+					&:last-child {
+						min-width: 360px;
+						margin-right: 0;
+						text-align: right;
+					}
+				}
+				&_v2 {
+					max-width: 1160px;
+					&-cell {
+						width: 360px;
+						min-width: 360px;
+						margin-right: 10px;
+						&:first-child {
+							margin-right: 70px;
+						}
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		&_v2{
+			&__body{
+				&__cell {
+					width: 360px; min-width: 360px;
+					margin-right: 10px;
+					&:first-child {
+						margin-right: 70px;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+					
+					&__genom {
+						font-size: 13px;
+						font-weight: bold;
+						text-align: right;
+						line-height: 20px;
+						color: #333;
+						margin-bottom: 10px;
+						&-percent {
+							font-size: 100px;
+							line-height: 100px;
+							font-weight: 800;
+							display: flex;
+							justify-content: flex-end;
+							color: #E5E5E5;
+							&__symbol {
+								font-size: 20px;
+								align-self: baseline;
+								width: 20px;
+								line-height: 30px;
+								font-weight: bold;
+							}
+						}
+					}
+
+					.calculator__gender-blocks__item__body__dog-block__genom-wrapper__gens {
+						font-size: 13px;
+						line-height: 16px;
+					}
+
+					&__color-table {
+						max-width: 260px;
+						margin-left: auto;
+						&__row {
+							display: flex;
+							font-size: 13px;
+							line-height: 40px;
+							font-weight: 500;
+							border-bottom: 1px solid #e5e5e5;
+							height: 40px;
+							box-sizing: border-box;
+							&:last-child {
+								border-bottom: none;
+							}
+						}
+						&__cell {
+							&:first-child {
+								font-weight: bold;
+								width: 69.5%;
+								margin-right: 30px;
+							}
+							&:last-child {
+								width: 19.4%;
+								text-align: right;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__body {
+			&__wrap {
+				border-bottom: 1px solid #E5E5E5;
+				padding-bottom: 60px;
+				margin-bottom: 60px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&__row {
+				max-width: 1100px;
+				margin: 0 auto;
+				display: flex;
+				cursor: pointer;
+				&_v2 {
+					max-width: 1160px;
+					margin-bottom: 40px;
+					padding-bottom: 40px;
+					border-bottom: 1px solid #E5E5E5;
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+			&__cell {
+				max-width: 160px;
+				margin-right: 40px;
+				position: relative;
+				user-select: none;
+				&:first-child {
+					&:before, &:after {
+						content: '';
+						position: absolute;
+						width: 20px; height: 4px;
+						background-color: #000;
+						top: 78px; right: -30px;
+					}	
+					&:after {
+						transform: rotate(90deg);
+					}
+				}
+				&:last-child {
+					max-width: 360px;
+					margin-right: 0;
+				}
+				&__dog-block {
+					&__image {
+						width: 100%; height: 160px;
+						background-size: cover;
+						background-position: center;
+						background-repeat: no-repeat;
+						border-radius: 50%;
+						margin-bottom: 20px;
+						display: flex;
+
+						&-icon {
+							width: 64px;
+							height: 64px;
+							margin: auto;
+							fill: #ffffff;
+						}
+					}
+					&__title {
+						font-size: 16px;
+						line-height: 20px;
+						margin-bottom: 10px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						font-weight: bold;
+					}
+					&__info {
+						font-size: 14px;
+						line-height: 20px;
+						color: #999;
+						font-weight: 500;
+						margin-bottom: 10px;
+						&-gender {
+							&.male {
+								width: 30px; height: 30px;
+								fill: #5CA1E5;
+							}
+							&.female {
+								width: 22px; height: 36px;
+								fill: #E55C8A;
+							}
+						}
+					}
+					&__genom-wrapper {
+						color: #333;
+						font-size: 13px;
+						line-height: 20px;
+						margin-bottom: 13px;
+						font-weight: 600;
+						.help {
+							display: none;
+						}
+					}
+				}
+				&__colors-table {
+					border: 1px solid #E6E6E6;
+
+					&__row {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						position: relative;
+						min-width: 360px; min-height: 40px;
+						padding: 0 20px;
+						box-sizing: border-box;
+						color: #333;
+						font-size: 13px;
+						line-height: 22px;
+						border-bottom: 1px solid #E6E6E6;
+						transition: 0.3s;
+						&.dark {
+							background-color: #F2F2F2;
+						}
+						&:hover {
+							background-color: #333;
+							color: #fff;
+
+							.calculator__result-dogs__body__cell__colors-table__cell__popup-image {
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+
+						&:last-child, &:nth-last-child(2), &:nth-last-child(3), &:nth-last-child(4) {
+							.calculator__result-dogs__body__cell__colors-table__cell__popup-image {
+								bottom: 0;
+								top: unset;
+								&:before {
+									bottom: 0;
+								}
+							}
+						}
+					}
+					&__cell {
+						&:first-child {
+							width: 100%; max-width: 240px;
+							font-weight: bold;
+						}
+						&:last-child {
+							width: 100%; max-width: 80px;
+							text-align: right;
+							font-weight: 500;
+						}
+
+						&__popup-image {
+							opacity: 0;
+							visibility: hidden;
+							min-width: 180px; min-height: 180px;
+							width: 180px; height: 180px;
+							background-color: #fff;
+							background-size: 160px 160px;
+							background-position: center;
+							background-repeat: no-repeat;
+							padding: 10px;
+							box-sizing: border-box;
+							box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+							position: absolute;
+							right: -210px; top: 0;
+							transition: 0.5s;
+							&:before {
+								content:'';
+								position: absolute;
+								border: 20px solid transparent;
+								border-right: 30px solid #fff;
+								left: -40px; top: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__color-blocks {
+		margin: 100px auto 60px;
+		&__title {
+			width: 100%; min-height: 30px;
+			font-size: 24px;
+			line-height: 30px;
+			font-weight: bold;
+			margin-bottom: 40px;
+		}
+
+		&__wrap {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			margin-bottom: 30px;
+		}
+
+		&__checkbox-block {
+			border-radius: 500px;
+			min-height: 50px;
+			display: flex;
+			padding: 0 20px;
+			margin-right: 5px;
+			margin-bottom: 10px;
+			color: #333;
+			font-size: 14px;
+			line-height: 50px;
+			font-weight: 500;
+			cursor: pointer;
+			&__input {
+				display: none;
+			}
+			&__text {
+				cursor: pointer;
+			}
+			&.dark {
+				color: #fff;
+			}
+			&.checked {
+				border: 1px dashed rgba(0, 0, 0, 0.25);
+				border-radius: 100px;
+				background-color: transparent !important;
+				box-sizing: border-box;
+				color: #333;
+				.calculator__color-blocks__checkbox-block__text {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		&__choose-colors {
+			display: flex;
+			padding: 10px;
+			box-sizing: border-box;	
+			&__item {
+				color: #999;
+				width: 340px; height: 60px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 100px;
+				.dark {
+					color: #000;
+				}
+
+				&.selected {
+					color: #000;
+					&.light {
+						color: #fff;
+					}
+				}
+				
+				&-wrap {
+					width: 360px; height: 80px;
+					min-width: 360px; min-height: 80px;
+					border: 2px dashed rgba(0, 0, 0, 0.25);
+					margin-right: 40px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 100px;
+					box-sizing: border-box;	
+					background-color: #F2F2F240;
+				}
+			}
+		}
+	}
+	&__stub {
+		width: 300px;
+		box-sizing: border-box;
+		border-radius: 5px;
+		border: 1px solid #E6E6E6;
+		margin: 0 auto;
+		display: flex;
+		max-width: 300px;
+		padding: 20px 22px 20px 0;
+		position: relative;
+		&:before {
+			content: '';
+			width: 5px;
+			height: 100%;
+			position: absolute;
+			background: #EB5757;
+			border-radius: 10px 0 0 10px;
+			top: 0; left: 0;
+		}
+		&__warning-icon {
+			min-width: 20px; width: 20px;
+			min-height: 18px; height: 18px;
+			margin: 0 10px 0 20px;
+		}
+		&__text {
+			font-size: 14px;
+			color: #333;
+			line-height: 24px;
+			font-weight: 500;
+			margin-top: -7px;
+		}
+	}
+}

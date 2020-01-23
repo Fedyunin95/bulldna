@@ -1,0 +1,7 @@
+div(class= box.class)
+	p.label.js_show-list.js_label= box.label
+	ul.list.js_drop-list
+		each item in box.list
+			li.item.js_item= item
+	svg.icon.js_show-list
+		use(xlink:href= box.img)

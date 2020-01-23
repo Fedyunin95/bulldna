@@ -1,0 +1,87 @@
+.header
+	.menu_mobile__button.js_menu_active
+		.icon.burger
+	.menu_mobile.js_menu__lists
+		.menu_mobile__buttons
+			.button.sign-in_mobile.js_sign-in
+				a.content Sign In
+			a.button.sign-up_mobile Sign Up
+		.user__block
+			a.link.account(href="") 
+				svg.icon 
+					use(xlink:href='../img/symbol_sprite.svg#icon-user')
+				p.text My account
+			.tariff
+				svg.icon
+					use(xlink:href="../img/symbol_sprite.svg#icon-star")
+				.info
+					p.plan 3 month
+					p.days-remain 21 of 90 days remaining
+					a.button.update 
+						.text Update plan
+			a.link.edit(href="")
+				svg.icon
+					use(xlink:href="../img/symbol_sprite.svg#icon-pencil")
+				p.text Edit account
+			a.link.out(href="")
+				svg.icon
+					use(xlink:href="../img/symbol_sprite.svg#icon-exit")
+				p.text Sign out
+		ul.menu_mobile__list
+			-var items = [{tittle : 'Services', list : ['Calculator', 'Find a puppy', 'Stud service']}, {tittle : 'Product', list : ['How It Works','Pricing','FAQ']}, {tittle : 'Company', list : ['About','Blog','Contact us']}]
+			each item in items
+				li(class="item js_menu__list " + item.tittle)
+					.item__icon.js_list__item_tittle.js_list__item_icon
+					.item__tittle.js_list__item_tittle= item.tittle
+					ul.item__menu.js_dropdown_menu
+						-var subItems = item.list
+						each listItem in subItems
+							li.item__menu__item
+								a.dropdown__menu_item_link= listItem
+	a.logotype(href="main.html")
+		svg(viewBox="0 0 141 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+			path(d="M78.44 0.939999C80.66 0.939999 82.6 1.38 84.26 2.26C85.92 3.14 87.2 4.38 88.1 5.98C89.02 7.56 89.48 9.39 89.48 11.47C89.48 13.53 89.02 15.36 88.1 16.96C87.2 18.56 85.91 19.8 84.23 20.68C82.57 21.56 80.64 22 78.44 22L70 22V0.999996L78.44 0.939999ZM78 18C79.94 18 81.56 17.08 82.64 16C83.72 14.92 84.26 13.41 84.26 11.47C84.26 9.53 83.72 8.02 82.64 6.94C81.56 5.86 79.94 5 78 5H75V18H78Z" fill="#804D6F")
+			path(d="M114 22L109 22L100 9V22H95V1H100L109.057 13.99L109 1H114V22Z" fill="#804D6F")
+			path(d="M134 18H126L124.5 22L119 22L127 1H133L141 22L135.5 22L134 18ZM133 14L130 6.5L127 14H133Z" fill="#804D6F")
+			path(d="M12.61 11.2C13.83 11.46 14.81 12.07 15.55 13.03C16.29 13.97 16.5 15.28 16.5 16.5C16.5 18.26 16.04 19.43 14.8 20.47C13.58 21.49 11.87 22 9.66999 22L0 22V0.940002H9.33999C11.48 0.940002 13.15 1.43 14.35 2.41C15.57 3.39 16 4.82 16 6.5C16 7.74 15.85 8.67 15.19 9.49C14.55 10.31 13.69 10.88 12.61 11.2ZM4.98999 9.49H8.34999C9.18999 9.49 9.82999 9.3 10.27 8.92C10.73 8.54 10.96 7.99 10.96 7.27C10.96 6.53 10.73 5.97 10.27 5.59C9.82999 5.19 9.18999 4.99 8.34999 4.99H4.98999V9.49ZM9 18C9.86 18 10.29 17.72 10.75 17.32C11.23 16.92 11.47 16.34 11.47 15.58C11.47 14.84 11.22 14.26 10.72 13.84C10.24 13.4 9.36 13 8.5 13H4.98999L5 18H9Z" fill="black")
+			path(d="M39 5V22H34.0354V19.72C33.5154 20.46 32.8054 21.06 31.9054 21.52C31.0254 21.96 30.08 22 29 22C27.72 22 26.5554 21.9 25.5754 21.34C24.5954 20.76 24.04 20.08 23.5 19C22.96 17.92 23 16.46 23 15V5H28V14.35C28 15.47 27.8754 16.34 28.4554 16.96C29.0354 17.58 29.52 18 30.5 18C31.5 18 32.5854 17.58 33.1654 16.96C33.7454 16.34 34.0354 15.47 34.0354 14.35V5H39Z" fill="black")
+			path(d="M58 1H63V22H58V1Z" fill="black")
+			path(d="M46 1H51V22H46V1Z" fill="black")
+	.menu__list
+		ul.menu__list_items
+			-var items = [{text:'Calculator', class: 'Calculator'},{text:'Find a puppy', class:''},{text:'Stud service', class:''},{text:'Pricing', class:''},{text:'FAQ', class:''},{text:'Contact us', class:''}]
+			each item in items
+				li(class="menu__list_item js_list__item " + item.class)
+					a= item.text
+	.currency.js_currency
+		span.currency_active.js_currency_active $ USD
+		ul.currency__list.js_currency__list
+			-var items = [{name: '$  USD', class:'active'}, {name: '€  EUR', class:''}, {name:'$  AUD', class:''}, {name:'$  CAD', class:''}, {name:'£  GBP', class:''}, {name:'¥  YEN', class:''}]
+			each item in items
+				li(class="item js_currency_item " + item.class)= item.name
+	.sign_button.js_sign-in Sign in
+	// Если у пользователя есть аватарка вставлять ее
+	.user.plan_v2(style="background-image: url(../../img/boy.svg)")
+		.user__popup
+			.user__popup__block
+				a.link.account(href="") 
+					svg.icon 
+						use(xlink:href='../img/symbol_sprite.svg#icon-user')
+					p.text My account
+				.tariff
+					svg.icon
+						use(xlink:href="../img/symbol_sprite.svg#icon-star")
+					.info
+						p.plan 3 month
+						p.days-remain 21 of 90 days remaining
+					a.button.update 
+						.text Update plan
+				a.link.edit(href="")
+					svg.icon
+						use(xlink:href="../img/symbol_sprite.svg#icon-pencil")
+					p.text Edit account
+				a.link.out(href="")
+					svg.icon
+						use(xlink:href="../img/symbol_sprite.svg#icon-exit")
+					p.text Sign out
+.header_background

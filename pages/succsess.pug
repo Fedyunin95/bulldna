@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Create account', link:'#'}]
+			include components/crumbs.pug
+			.welcome
+				h1.tittle Welcome to BullDNA!
+				svg.image
+					use(xlink:href="../img/symbol_sprite_default.svg#icon-dogs")
+				h2.subtitle Hope, you will enjoy the service!
+				p.text To confirm the registration, please follow the link we set to your e-mail.
+		footer
+			include components/footer.pug
+		include components/login_popup.pug
+		include components/forgot.pug

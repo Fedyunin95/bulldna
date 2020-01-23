@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Create account', link:'#'}]
+			include components/crumbs.pug
+			form.sign-up.js-sign-up-form(action="/" novalidate="true")
+				h2.tittle get Started absolutely free!
+				include components/social-links.pug
+				p.variant or
+				-
+					var blocks = [
+						{
+							class:'important', 
+							input_class:'field email',
+							type:'email', placeholder:'Email',
+							error_msg:'Enter valid e-mail',
+							name: "email",
+							required: true
+						},
+						{
+							class:'important pass',
+							input_class:'field js_password',
+							type:'password',
+							placeholder:'Password',
+							img:'../img/symbol_sprite.svg#icon-eye_1',
+							error_msg:'To short pass',
+							name: "password",
+							required: true,
+							minLength: 6,
+						},
+						{
+							class:'important',
+							input_class:'field',
+							type:'text',
+							placeholder:'Name',
+							error_msg: 'Wrong name',
+							name: "name",
+							required: true
+						}
+					]
+				each block in blocks
+					include components/input-block.pug
+				-
+					var boxs = [
+						{
+							class:'dropbox important js_box', 
+							label:'Country', 
+							list : [
+								{
+									name: 'Country',
+									value: '',
+									selected: true,
+								},
+								{
+									name: 'Russia',
+									value: 'Russia',
+									selected: false,
+								},
+								{
+									name: 'England',
+									value: 'England',
+									selected: false,
+								},
+								{
+									name: 'China',
+									value: 'China',
+									selected: false,
+								},
+								{
+									name: 'China',
+									value: 'China',
+									selected: false,
+								},
+							],
+							img:'../img/symbol_sprite.svg#icon-down-arrow',
+							msg: "Выберите страну"
+						},
+						{
+							class:'dropbox important js_box',
+							label:'City',
+							list : [
+								{
+									name: 'City',
+									value: '',
+									selected: true,
+								},
+								{
+									name: 'Moscow',
+									value: 'Moscow',
+									selected: false,
+								},
+								{
+									name: 'Kazan',
+									value: 'Kazan',
+									selected: false,
+								},
+								{
+									name: 'London',
+									value: 'London',
+									selected: false,
+								},
+								{
+									name: 'Paris',
+									value: 'Paris',
+									selected: false,
+								},
+							],
+							img:'../img/symbol_sprite.svg#icon-down-arrow',
+							msg: "Выберите город"
+						}
+					]
+				each box in boxs
+					.dropbox.important
+						select.select__input.js-select(required, error-msg= box.msg, name= box.label)
+							each option_value in box.list
+								option.select__input-option(value= option_value.value selected= option_value.selected)= option_value.name
+				.input-block.phone
+					-
+						var box = {
+								class:'dropbox js_box phone',
+								label:'Country code',
+								name: 'countryPhoneCode',
+								list : [
+								{
+									name: 'Country code',
+									value: '',
+									selected: true,
+								},
+								{
+									name: '+7',
+									value: '+7',
+									selected: false,
+								},
+								{
+									name: '+5',
+									value: '+5',
+									selected: false,
+								},
+								{
+									name: '+3',
+									value: '+3',
+									selected: false,
+								},
+								{
+									name: '+2',
+									value: '+2',
+									selected: false,
+								},
+							],
+								img:'../img/symbol_sprite.svg#icon-down-arrow'
+						}
+					select.select__input.js-select(name= box.name)
+						each option_value in box.list
+							option.select__input-option(value= option_value.value selected= option_value.selected)= option_value.name
+					.input-block.phone
+						input(type='tel' class='field' placeholder='Phone' error-msg='Wrong phone format' name="phone")
+				- 
+					var block = {
+							class:'',
+							input_class:'field',
+							type:'text',
+							placeholder:'Web page',
+							error_msg:'',
+							name: 'webPage'
+						}
+				include components/input-block.pug
+				.checkbox-block
+					.checkbox.js_check.js_kennel_check
+					input(type="checkbox" class="js_checkbox input-field" name="kennelEmployee")
+					p.label.js_check.js_kennel_check I'm a kennel employee
+				.wrapper.js_kennel
+					-var block = {class:'', input_class:'field', type:'text', placeholder:'Kennel', error_msg:'', name: "kennel"}
+					include components/input-block.pug
+					.input-block.textarea
+						textarea(class="field" maxlength="285" placeholder="Brief description of your facilities, practices, etc." name="kennel-description")
+				button.button Sign Up!
+				p.notification By clicking «Sign Up!», you agree to the <a href="" class="link">Terms of Use</a> and <a href="" class="link">Privacy Policy.</a>
+				a.sign-in__link.js_sign-in Have an account? Sign in!
+		footer
+			include components/footer.pug
+		include components/login_popup.pug	
+		include components/forgot.pug

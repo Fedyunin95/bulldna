@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug 
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Find a puppy', link:'find.pug'}, {name:'<DOG NAME>', link:''}]
+			include components/crumbs.pug
+			include components/contatc-seller_mobile.pug
+			.dog-page
+				.pagination
+					a.prev(href="")
+						svg
+							use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					p.pages <span class="active">1 </span>/ 28
+					a.next(href="")
+						svg
+							use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+				.image-block
+					// если изображений нет посдтавляется данный блок
+					// .image.stub(style="background-image: url(../../img/dog-stub.svg)")
+					// если имеются изображения вставляется блок слайдера
+					.image-block__slider.js-swiper(paginationType="fraction")
+						.swiper-wrapper
+							img.swiper-slide.image(src="../img/puppy1.png")
+							img.swiper-slide.image(src="../img/puppy2.png")
+							img.swiper-slide.image(src="../img/puppy1.png")
+					svg.like.js_like
+						use(xlink:href="../img/symbol_sprite.svg#icon-like_1")
+					.pagination
+						.prev.js-swiper-button-prev
+							svg.prev
+								use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+						p.pages.js-swiper-pagination <span class="active">1 </span>/ 3
+						.next.js-swiper-button-next
+							svg.next
+								use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					p.description Reventon will be available for stud in the next year. His father is Ace of Hearts at Dezinerbullz and mother is from Shrinkabull's line. His patella , spine, breathing is perfect, heart:  no murmur, eyes are clear HC DM clear. He have all the health test are clear and negative.
+				.info-block
+					div.marks
+						.mark.sale For sale
+						.mark.stud For stud
+					h2.name Reventon von den Special Bully's
+					.pricies
+						.sale
+							p.text Sale price
+							p.none
+						.stud
+							p.text Stud price
+							p.price 500 $
+					.saler
+						// Если у пользователя есть аватарка вставлять ее
+						.image(style="background-image: url(../../img/boy.svg)")
+						.info
+							h4.name Taya Jones
+							p.place New York, USA
+						a.button.contact-seller.js_write-message
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-envelope")
+							p.text Contact the seller
+					table.dog-info
+						tr.row
+							td.cell.cell_left.cell_mobile-small Breed:
+							td.cell.cell_right French Bulldog
+						tr.row
+							td.cell.cell_left.cell_mobile-small Gender:
+							td.cell.cell_right.gender
+								//Если пол женский male заменить на female
+								svg.icon.male
+									use(xlink:href="../img/symbol_sprite.svg#icon-male")
+									p.text Male
+						tr.row
+							td.cell.cell_left.cell_mobile-small Birth day:
+							td.cell.cell_right 04/28/2016 2y 4m
+						tr.row
+							td.cell.cell_left.cell_mobile-small Color:
+							td.cell.cell_right Blue tan
+						tr.row
+							td.cell.cell_left.cell_mobile-large Registered AKC / FCI:
+							td.cell.cell_right.cell_true Yes
+						tr.row
+							td.cell.cell_left.cell_mobile-large Registred other pedigree:
+							td.cell.cell_right.cell_false No
+						tr.row
+							td.cell.cell_left.cell_mobile-large Health certificate:
+							td.cell.cell_right.cell_true Yes
+						tr.row
+							td.cell.cell_left.cell_mobile-large Health guarantee:
+							td.cell.cell_right.cell_true Yes
+						tr.row
+							td.cell.cell_left.cell_mobile-large Shipping included:
+							td.cell.cell_right.cell_false No
+					.dna
+						h4.title DNA
+						.help.js_help
+									svg.icon
+										use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+									a.help__link.js_help-block(href="") 
+										p.text About genotype
+										svg.arrow
+											use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+						table.dna__dog-info.dog-info
+							tr.row
+								td.cell.cell_left Agouti:
+								td.cell.cell_right At
+								td.cell.cell_right At
+							tr.row
+								td.cell.cell_left Brown:
+								td.cell.cell_right B
+								td.cell.cell_right b
+							tr.row
+								td.cell.cell_left Dilute:
+								td.cell.cell_right d
+								td.cell.cell_right d
+							tr.row
+								td.cell.cell_left Dominant black:
+								td.cell.cell_right Ky
+								td.cell.cell_right Ky
+							tr.row
+								td.cell.cell_left MCRI:
+								td.cell.cell_right E
+								td.cell.cell_right e
+							tr.row
+								td.cell.cell_left Pied:
+								td.cell.cell_right N
+								td.cell.cell_right N
+				p.description_mobile Reventon will be available for stud in the next year. His father is Ace of Hearts at Dezinerbullz and mother is from Shrinkabull's line. His patella, spine, breathing is perfect, heart:  no murmur, eyes are clear HC DM clear. He have all the health test are clear and negative.
+				.saler-block_mobile.saler.js_saler_mobile
+					//- При наличии фотографии убрать класс stub
+					.image.stub(style="background-image: url(../../img/boy.svg)")
+					.info
+						h4.name Taya Jones
+						p.place New York, USA
+					a.button.contact-seller.js_write-message
+						svg.icon
+							use(xlink:href="../img/symbol_sprite.svg#icon-envelope")
+						p.text Contact the seller
+		footer
+			include components/footer.pug
+		include components/contact-seller.pug

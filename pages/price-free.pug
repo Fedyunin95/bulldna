@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'My account', link:''}, {name:'Update plan', link:''}]
+			include components/crumbs.pug
+			section.price
+				.price__wrap
+					h1.price__title.update-plan Update plan
+					p.price__subtitle Choose the plan for which you want to continue 
+					.price__plans
+						.price__plans-item
+							p.price__plans-item__current Your current plan
+							.plan__header.plan__header_free
+								h3.plan__header__title 1 month
+								.plan__header__price
+									h1.price__value 0
+									p.price__currency $
+								.plan__header__type Free
+							.plan__description
+								p.plan__text.plan__text_active 1 month
+								p.plan__text.plan__text_active 3 your own dogs
+								p.plan__text.plan__text_active Forecast the offspring by genodate
+								p.plan__text No Forecast the offspring of my dogs
+								p.plan__text No Search for a male for offspring of a certain color
+								p.plan__text No Search for a male for the offspring of a particular genome
+							.button.plan__choose.disabled
+								a.btn Free trial period is active
+						.price__plans-item
+							.plan__header.plan__header_season
+								h3.plan__header__title 3 month
+								.plan__header__price
+									h1.price__value 30
+									p.price__currency $
+								.plan__header__type Единовременная оплата
+							.plan__description
+								p.plan__text.plan__text_active 3 month
+								p.plan__text.plan__text_active 3 your own dogs
+								p.plan__text.plan__text_active Forecast the offspring by genodate
+								p.plan__text.plan__text_active No Forecast the offspring of my dogs
+								p.plan__text.plan__text_active No Search for a male for offspring of a certain color
+								p.plan__text.plan__text_active No Search for a male for the offspring of a particular genome
+							.button.plan__choose
+								a.btn Get Started
+						.price__plans-item
+							.plan__header.plan__header_year
+								h3.plan__header__title 12 month
+								.plan__header__price
+									h1.price__value 100
+									p.price__currency $
+								.plan__header__type Единовременная оплата
+							.plan__description
+								p.plan__text.plan__text_active 13 month
+								p.plan__text.plan__text_active unlimited your own dogs
+								p.plan__text.plan__text_active Forecast the offspring by genodate
+								p.plan__text.plan__text_active No Forecast the offspring of my dogs
+								p.plan__text.plan__text_active No Search for a male for offspring of a certain color
+								p.plan__text.plan__text_active No Search for a male for the offspring of a particular genome
+							.button.plan__choose
+								a.btn Get Started
+					.price__faq-block
+						.price__faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+						.price__faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+						.price__faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+		footer
+			include components/footer.pug

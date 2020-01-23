@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'About Us', link:''}]
+			include components/crumbs.pug
+			section.about
+				.wrap
+					h1.title About Us
+					h3.subtitle We are a small team with a big ideas
+					.about-info
+						p.paragraph PuppySpot is a service committed to helping responsible breeders place their puppies with caring individuals and families in New York City, Los Angeles, San Francisco, Washington D.C., Dallas, and across the U.S. But, more than just a service, PuppySpot is a community of dog lovers whose mission is to make lives better by placing healthy puppies into happy homes.
+						p.paragraph The PuppySpot brand, with puppies at the center, is rooted in the belief that dogs should be celebrated, and owners deserve to experience trust, confidence and transparency when searching for their new companions.
+					.leadership
+						.leader.left.female
+							.image(style="background-image: url(../img/Alexandra.png)")
+							h4.name Alexsandra Dementieva
+						.leader.right.male
+							.image(style="background-image: url(../img/Arkady.png)")
+							h4.name Arkady Babaev
+					.slogan-block
+						svg.quotes
+							use(xlink:href="../img/symbol_sprite.svg#icon-quotes")
+						.citation
+							p.text When I'm stressed I just look at my dog. It reminds of how simple things really are
+							p.aftor Winston Churchill, British Prime Minister
+		include components/callback-form.pug
+		footer.about-page__footer
+			include components/footer.pug

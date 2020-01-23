@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body.user_in
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'My account', link:'my-profile.pug'}, {name:'Edit account', link:'#'}]
+			include components/crumbs.pug
+			.edit-block
+				h1.title Edit account
+				a.back-link
+					svg.arrow
+						use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					p.text Back to my account
+				.col
+					form.row.basic
+						h4.title Basic Info
+						.image-block
+							// если у юзера есть фотография подставлять ее и удалить класс stub. 
+							.image.stub(style='background-image: url(../../img/boy.svg)')
+							.change
+								.button
+									a.link.js_change-photo Change photo
+								p.notification The image should be no larger than 500x500 pixels and 1Mb
+						-var blocks = [{class:'important', input_class:'field email', type:'text', placeholder:'Email', error_msg:'Enter valid e-mail'}, {class:'important pass', input_class:'field js_password', type:'password', placeholder:'Password', img:'../img/symbol_sprite.svg#icon-eye_1', error_msg:'To short pass'}, {class:'important', input_class:'field', type:'text', placeholder:'Name', error_msg: 'Wrong name'}]
+						each block in blocks
+							include components/input-block.pug
+						-var boxs = [{class:'dropbox important js_box', label:'Country', list : ['England', 'Russia', 'China', 'Japan'], img:'../img/symbol_sprite.svg#icon-down-arrow'}, {class:'dropbox important js_box', label:'City', list : ['Moscow', 'Kazan', 'London', 'Paris'], img:'../img/symbol_sprite.svg#icon-down-arrow'}]
+						each box in boxs
+							include components/dropbox.pug
+						.input-block.phone
+							-var box = {class:'dropbox js_box phone-code', label:'Country code', list : ['+7', '+5', '+3', '+9'], img:'../img/symbol_sprite.svg#icon-down-arrow'}
+							include components/dropbox.pug
+							.input-block.phone
+								input(type='tel' class='field' placeholder='Phone' error-msg='Wrong phone format')
+						-var block = {class:'', input_class:'field', type:'text', placeholder:'Web page', error_msg:''}
+						include components/input-block.pug
+						.checkbox-block
+							.checkbox.js_check.js_kennel_check
+							input(type="checkbox" class="js_checkbox input-field")
+							p.label.js_check.js_kennel_check I'm a kennel employee
+						.wrapper.js_kennel
+							-var block = {class:'', input_class:'field', type:'text', placeholder:'Kennel', error_msg:''}
+							include components/input-block.pug
+							.input-block.textarea
+								textarea(class="field" maxlength="285" placeholder="Brief description of your facilities, practices, etc.")
+						button.button.save.js_save-changes Save Changes
+						a.cancel.js_reset-changes Cancel
+				.col
+					form.row.password
+						h4.title Password
+						-var blocks = [{class:'important pass', input_class:'field js_password', type:'password', placeholder:'Current password', img:'../img/symbol_sprite.svg#icon-eye_1', error_msg:'To short pass'}, {class:'important pass', input_class:'field js_password', type:'password', placeholder:'New password', img:'../img/symbol_sprite.svg#icon-eye_1', error_msg:'To short pass'}]
+						each block in blocks
+							include components/input-block.pug
+						button.button.save.js_save-changes Save Changes
+						a.cancel.js_reset-changes Cancel
+					.row.social-block
+						h4.title Social networks
+						p.text You can link your account with your social networks
+						.social-block__links
+							-var links = [{name:'goggle', path:'#', class:'google'},{name:'facebook', path:'#', class:'fb'},{name:'VK', path:'#', class:'vk'},{name:'twitter', path:'#', class:'twitter'}]
+							each link in links
+								a(
+									href= link.path
+									class="link "+ link.class 
+								)= link.name
+		footer
+			include components/footer.pug

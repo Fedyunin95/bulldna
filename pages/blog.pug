@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Blog', link:''}]
+				include components/crumbs.pug
+			section.blog
+				h1.title Blog
+				.articles
+					-var articles = [{image:'../img/puppy1.png', date:'20 aug 2018', title:'6 Things You Didn’t Know About the Bulldogs'}, {image:'../img/puppy2.png', date:'20 aug 2018', title:'How to Minimize Separation Anxiety When You Must Leave Your Pet'}, {image:'../img/puppy1.png', date:'20 aug 2018', title:'6 Things You Didn’t Know About the Bulldogs'}, {image:'../img/puppy2.png', date:'20 aug 2018', title:'How to Minimize Separation Anxiety When You Must Leave Your Pet'}]
+					each article in articles
+						a.article(href="")
+							.image(style="background-image: url(" + article.image + ")")
+							p.date= article.date
+							h3.title= article.title
+				.pagination
+					svg.prev
+						use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					p.pages <span class="active">1 </span>/ 28
+					svg.next
+						use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+		footer
+			include components/footer.pug

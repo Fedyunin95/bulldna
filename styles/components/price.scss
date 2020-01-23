@@ -1,0 +1,318 @@
+.price {
+	padding: 0 10px;
+	margin: 80px 0 120px;
+	@media screen and (max-width: 1200px) {
+		margin: 40px 0 80px;
+	}
+	&__wrap {
+		max-width: 1160px;
+		margin: 0 auto;
+		& .my-account__link {
+			max-width: 360px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			font-size: 14px;
+			line-height: 27px;
+			color: #000;
+			text-transform: uppercase;
+			& .link__icon {
+				width: 14px; height: 16px;
+				margin-left: 20px;
+			}
+		}
+	}
+	&__title {
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+		height: 50px;
+		margin-bottom: 90px;
+		&.update-plan {
+			margin-bottom: 30px;
+		}
+		@media screen and (max-width: 1200px) {
+			text-align: left;
+			font-size: 30px;
+			line-height: 40px;
+			margin-bottom: 40px;
+			padding: 0 20px;
+		}
+	}
+	&__subtitle {
+		text-align: center;
+		margin-bottom: 60px;
+		font-weight: 500;
+		font-size: 16px;
+		height: 30px;
+		line-height: 31px;
+		color: #666;
+		@media screen and (max-width: 1200px) {
+			font-size: 15px;
+			height: 50px;
+			line-height: 26px;
+			text-align: left;
+			padding: 0 20px;
+		}
+	}
+	&__plans {
+		width: 100%;
+		display: flex;
+		margin-bottom: 80px;
+		justify-content: center;
+		@media screen and (max-width: 1200px) {
+			flex-wrap: wrap;
+		}
+		&-item {
+			width: 100%; max-width: 360px;
+			height: auto; max-height: 680px;
+			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
+			border-radius: 10px;
+			padding-bottom: 50px;
+			box-sizing: border-box;
+			margin-right: 40px;
+			position: relative;
+			@media screen and (max-width: 1200px) {
+				margin-right: 0;
+				margin-bottom: 30px;
+			}
+			&:last-child {
+				margin-right: 0;
+				@media screen and (max-width: 1200px) {
+					margin-bottom: 30px;
+				}
+			}
+			&__current {
+				position: absolute;
+				top: 0;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				text-transform: uppercase;
+				width: 160px;
+				height: 30px;
+				font-size: 10px;
+				line-height: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: #fff;
+				background-color: #000;
+			}
+		}
+		.plan {
+			&__header {
+				padding: 40px 0 30px;
+				box-sizing: border-box;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				width: 100%;
+				height: 240px;
+				margin-bottom: 30px;
+				@media screen and (max-width: 1200px) {
+					padding: 30px 0;
+					height: 200px;
+					margin-bottom: 20px;
+				}
+				&_free {
+					background-color: #DAF2EA;
+				}
+				&_season {
+					background-color: #DAEAF2;
+				}
+				&_year {
+					background-color: #E5DAE5;
+				}
+				&__title {
+					font-weight: 600;
+					font-size: 20px;
+					height: 20px;
+					margin-bottom: 20px;
+					@media screen and (max-width: 1200px) {
+						font-size: 16px;
+						line-height: 20px;
+						margin-bottom: 10px;
+					}
+				}
+				&__price {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%; height: 100px;
+					max-height: 100px;
+					position: relative;
+					@media screen and (max-width: 1200px) {
+						margin-bottom: 10px;
+					}
+					& .price__value {
+						font-size: 100px;
+						font-weight: 600;
+						line-height: 122px;
+						@media screen and (max-width: 1200px) {
+							font-size: 80px;
+							line-height: 80px;
+						}
+					}
+					& .price__currency {
+						font-weight: 800;
+						align-self: baseline;
+						font-size: 20px;
+						line-height: 39px;
+						height: 40px;
+						@media screen and (max-width: 1200px) {
+							font-size: 18px;
+							line-height: 35px;
+						}
+					}
+				}
+				&__type {
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 27px;
+					opacity: 0.5;
+				}
+			}
+			&__description {
+				padding: 0 40px;
+				margin-bottom: 40px;
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: 500;
+				@media screen and (max-width: 1200px) {
+					padding: 0 20px;
+					margin-bottom: 40px;
+				}
+			}
+			&__text {
+				margin-bottom: 20px;
+				color: #999;
+				&_active {
+					color: #000;
+				}
+			}
+
+			&__choose {
+				width: 280px; height: 60px;
+				margin: 0 auto;
+				background: #fff;
+				color: #000;	
+				border: 3px solid #000;
+				&.disabled {
+					border: none;
+					background-color: #F2F2F2;
+					color: #999;
+					cursor: default;
+					& .btn {
+						background-color: transparent;
+					}
+					&:after {
+						display: none;
+					}
+				}
+				& .btn {
+					width: 100%; height: 100%;
+					text-align: center;
+					line-height: 60px;
+					background-color: #fff;
+				}
+				&:after {
+					background-color: #000;
+				}
+			}
+		}
+	}
+	&__faq-block {
+		width: 100%;
+		@media screen and (max-width: 1200px) {
+			max-width: 100%;
+			box-sizing: border-box;
+			padding: 0 20px;
+		}
+		&__question {
+			width: 100%; max-height: 100px;
+			display: flex;
+			flex-wrap: wrap;
+			overflow: hidden;
+			position: relative;
+			border-bottom: 1px solid #E6E6E6;
+			padding: 40px 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			transition: 0.4s;
+			font-weight: 500;
+			@media screen and (max-width: 1200px) {
+				max-height: 110px;
+				padding: 20px 0;
+			}
+			&.open {
+				max-height: unset;
+				& .icon-plus {
+					&:after {
+						transform: rotate(0);
+					}
+				}
+				& .question {					
+					margin-bottom: 40px;
+				}
+				& .answer {
+					transform: scaleY(1);
+				}
+			}
+			&:hover {
+				& .icon-plus {
+					&:after {
+						transform: rotate(0);
+					}
+				}
+			}
+			& .icon-plus {
+				position: absolute;
+				width: 20px; height: 2px;
+				background-color: #000;
+				right: 0; top: 51px;
+				@media screen and (max-width: 1200px) {
+					width: 14px;
+					top: 30px;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%; height: 100%;
+					background-color: #000;
+					transform: rotate(90deg);
+					transition: 0.5s;
+				}
+			}
+			& .question {
+				width: 100%; height: auto;
+				max-height: 1060px;
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				@media screen and (max-width: 1200px) {
+					font-size: 15px;
+					max-width: 230px;
+					margin-bottom: 20px;
+				}
+			}
+			& .answer {
+				font-size: 14px;
+				line-height: 24px;
+				color: #666;
+				max-width: 1060px;
+				transform-origin: top;
+				transform: scaleY(0);
+				transition: 0.5s;
+				@media screen and (max-width: 1200px) {
+					line-height: 27px;
+					transition: 0.3s;
+				}
+			}
+		}
+	}
+}

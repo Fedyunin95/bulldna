@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Pricing', link:''}]
+			include components/crumbs.pug
+			section.faq-block
+				h1.title FAQ
+				nav.faq-block__groups
+					a.faq-block__groups__group.active(href="") General question
+					a.faq-block__groups__group(href="") Work with DNA Calculator
+					a.faq-block__groups__group(href="") Pricing
+					a.faq-block__groups__group(href="") Plans
+					a.faq-block__groups__group(href="") Security
+				section.faq-block__questions
+						.faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+						.faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+						.faq-block__question.js_open
+							.icon-plus
+							p.question What happens when the trial period is over? Will I be charged?
+							p.answer The answer to this question depends on the goals you have in mind. At this link, we have made our Plan Usage Guides available to help you decide which service plan is right for you. But if you are still confused, or just want to get direct help from us, you can! Simply write to us, and we will provide you with guidance to the product that is right for your needs.
+		include components/callback-form.pug
+		footer.about-page__footer
+			include components/footer.pug

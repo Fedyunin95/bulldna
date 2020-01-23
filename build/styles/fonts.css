@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+    url('fontFiles/Montserrat-Light.woff') format('woff'),
+    url('fontFiles/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Thin'), local('Montserrat-Thin'),
+    url('fontFiles/Montserrat-Thin.woff') format('woff'),
+    url('fontFiles/Montserrat-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+    url('fontFiles/Montserrat-SemiBold.woff') format('woff'),
+    url('fontFiles/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('fontFiles/Montserrat-Bold.woff') format('woff'),
+    url('fontFiles/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('fontFiles/Montserrat-Regular.woff') format('woff'),
+    url('fontFiles/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+    url('fontFiles/Montserrat-Medium.woff') format('woff'),
+    url('fontFiles/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+    url('fontFiles/Montserrat-ExtraBold.woff') format('woff'),
+    url('fontFiles/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Black'), local('Montserrat-Black'),
+    url('fontFiles/Montserrat-Black.woff') format('woff'),
+    url('fontFiles/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'indie_flowerregular';
+    src: url('fontFiles/indieflower.ttf') format('ttf'),
+         url('fontFiles/indieflower.woff2') format('woff2'),
+         url('fontFiles/indieflower.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'merriweather';
+    src: url('fontFiles/Merriweather-Italic.ttf') format('ttf'),
+         url('fontFiles/Merriweather-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

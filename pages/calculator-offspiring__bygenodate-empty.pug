@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Calculator', link:''}, {name:'Forecast the offspring of my dogs', link:''}]
+			include components/crumbs.pug
+			.calculator-wrapper
+				h1.title Color DNA Calculator
+				.calculator__steps-wrapper
+					.calculator__steps
+						.calculator__steps__item
+							h2.title Forecast the offspring of <br> my dogs
+							.calculator__steps__item-number 1
+						.calculator__steps__item.active
+							h2.title Forecast the offspring <br> by genodate
+							.calculator__steps__item-number 2
+						.calculator__steps__item
+							h2.title Search for a male for offspring of a certain color
+							.calculator__steps__item-number 3
+						.calculator__steps__item
+							h2.title Search for a male for the offspring of a particular genome
+							.calculator__steps__item-number 4
+				.calculator-genodate.calculator
+					.calculator__instruction-block.js_instruction-block
+						h3.calculator__instruction-block__title.js_instruction-title How It Works
+						.calculator__instruction-block__instruction.js_instruction
+							p.instruction-text This case is calculating the highest possibilities of dogs located around the breeder to get highest chance to produce the puppy with the required genetic code.
+							.instruction-quote 
+								p.quote__text EXAMPLE: I want to buy a lilac tan puppy with cream (DNA: bb dd atat Ee kyky NN) ; Where is the nearest male and female from me with the highest chance that will produce this puppy for me that I can contact the breeder in advance?
+							h4.instruction-title Instruction
+							ul.instruction__list
+								li.instruction__list__item
+									p.instruction__list__item-number 1
+									p.instruction__list__item-text Добавьте собак в свой аккаунт
+								li.instruction__list__item
+									p.instruction__list__item-number 2
+									p.instruction__list__item-text Выберите в списке "Мои собаки" и "Избранные собаки" кобелей и сук, которых хотите проверить/сравнить. Кликните по темной карточке для выбора. <br> Чтобы исключить из расчета выбранную собаку кликните на нее еще раз, карточка станет темной. 
+								li.instruction__list__item
+									p.instruction__list__item-number 3
+									p.instruction__list__item-text Нажмите кнопку "Расчитать прогноз потомства"
+					.calculator__gender-blocks
+						.calculator__gender-blocks__item
+							.add-dog__description__genom-block.male
+								h1.genom-block__title DNA
+								-
+									var genomsBlock = [
+										{
+											title: "Agouti",
+											genoms: ["At","Ay","a"],
+										},
+										{
+											title: "Brown",
+											genoms: ["B","b"],
+										},
+										{
+											title: "Dilute",
+											genoms: ["D","d"],
+										},
+										{
+											title: "Dominant black",
+											genoms: ["Kbr","Ky"],
+										},
+										{
+											title: "MCR1",
+											genoms: ["E","e", "Em"],
+										},
+										{
+											title: "Pied",
+											genoms: ["N","S"],
+										},
+									]
+								.genom-block__table
+									each block in genomsBlock
+										.genom-block__table__row
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "LeftMale" id= genom + "LeftMale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "LeftMale")= genom
+											.genom-block__table__cell.title= block.title
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "RightMale" id= genom + "RightMale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "RightMale")= genom
+								.genom-block__table_mobile
+									each block in genomsBlock
+										.genom-block__table__row-title
+											.genom-block__table__cell.title= block.title
+										.genom-block__table__row
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "LeftMale" id= genom + "LeftMobileMale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "LeftMobileMale")= genom
+											.genom-block__table__cell.title
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "RightMale" id= genom + "RightMobileMale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "RightMobileMale")= genom
+						.calculator__gender-blocks__item
+							.add-dog__description__genom-block.female
+								h1.genom-block__title DNA
+								-
+									var genomsBlock = [
+										{
+											title: "Agouti",
+											genoms: ["At","Ay","a"],
+										},
+										{
+											title: "Brown",
+											genoms: ["B","b"],
+										},
+										{
+											title: "Dilute",
+											genoms: ["D","d"],
+										},
+										{
+											title: "Dominant black",
+											genoms: ["Kbr","Ky"],
+										},
+										{
+											title: "MCR1",
+											genoms: ["E","e", "Em"],
+										},
+										{
+											title: "Pied",
+											genoms: ["N","S"],
+										},
+									]
+								.genom-block__table
+									each block in genomsBlock
+										.genom-block__table__row
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "LeftFemale" id= genom + "LeftFemale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "LeftFemale")= genom
+											.genom-block__table__cell.title= block.title
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "RightFemale" id= genom + "RightFemale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "RightFemale")= genom
+								.genom-block__table_mobile
+									each block in genomsBlock
+										.genom-block__table__row-title
+											.genom-block__table__cell.title= block.title
+										.genom-block__table__row
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "LeftFemale" id= genom + "LeftMobileFemale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "LeftMobileFemale")= genom
+											.genom-block__table__cell.title
+											each genom in block.genoms
+												.genom-block__table__cell
+													input.genom-block__table__checkbox(type="radio" name= block.title + "RightFemale" id= genom + "RightMobileFemale")
+													label.genom-block__table__checkbox-label.genom(for= genom + "RightMobileFemale")= genom
+					a.button.calculator__calculate-button Forecast offspring of my dogs
+				.calculator__result-dogs
+					h1.calculator__result-dogs__title Offspring of my dogs
+					.calculator__result-dogs__header-wrap
+						.calculator__result-dogs__header-wrap__content
+							p.calculator__result-dogs__header-wrap__content-cell Male
+							p.calculator__result-dogs__header-wrap__content-cell Female
+							p.calculator__result-dogs__header-wrap__content-cell Вероятность окраса, %
+					.calculator__result-dogs__body
+						.calculator__result-dogs__body__wrap
+							.calculator__result-dogs__body__row
+								.calculator__result-dogs__body__cell
+									.calculator__result-dogs__body__cell__dog-block
+										.calculator__result-dogs__body__cell__dog-block__image(style="background: linear-gradient(0deg, #DAE6F2, #DAE6F2), #C2DAF2;")
+											svg.calculator__result-dogs__body__cell__dog-block__image-icon
+													use(xlink:href="../img/symbol_sprite.svg#icon-male")
+										.calculator__result-dogs__body__cell__dog-block__body
+											.calculator__result-dogs__body__cell__dog-block__genom-wrapper
+												p.calculator__result-dogs__body__cell__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm N
+								.calculator__result-dogs__body__cell
+									.calculator__result-dogs__body__cell__dog-block
+										.calculator__result-dogs__body__cell__dog-block__image(style="background: linear-gradient(0deg, #F2DAE2, #F2DAE2), #F2C2D2;")
+											svg.calculator__result-dogs__body__cell__dog-block__image-icon
+													use(xlink:href="../img/symbol_sprite.svg#icon-female")
+										.calculator__result-dogs__body__cell__dog-block__body
+											.calculator__result-dogs__body__cell__dog-block__genom-wrapper
+												p.calculator__result-dogs__body__cell__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm N
+								.calculator__result-dogs__body__cell
+									.calculator__result-dogs__body__cell__colors-table
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+										.calculator__result-dogs__body__cell__colors-table__row
+											p.calculator__result-dogs__body__cell__colors-table__cell chocolate trindle pied
+											p.calculator__result-dogs__body__cell__colors-table__cell-value 15.63
+											.calculator__result-dogs__body__cell__colors-table__cell__popup-image(style="background-image:url(../img/puppy2.png)")
+			.calculator-wrapper_mobile
+					h1.title Color DNA Calculator
+					.calculator__stub
+						svg.calculator__stub__warning-icon
+							use(xlink:href="../img/symbol_sprite_default.svg#icon-warning")
+						p.calculator__stub__text To use a Calculator, enlarge your browser window, or switch to a computer with a larger screen resolution
+		footer
+			include components/footer.pug

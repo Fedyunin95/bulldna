@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	//- Если пользователь не авторизован удалить класс user_in
+	body
+		header.js_header.main-page
+			include components/header.pug
+		.user_in.main
+			section.error-page
+				.wrapper
+					h1.title Ooops!
+					p.info You're lost...
+					a.homepage__link(href="main.html")
+						p.text back to home page
+						svg.arrow
+							use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					svg.dog
+						use(xlink:href="../img/symbol_sprite_default.svg#icon-bulldog_parent_1")
+		footer
+			include components/footer.pug

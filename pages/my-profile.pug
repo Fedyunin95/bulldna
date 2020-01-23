@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug 
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'My account', link:'#'}]
+			include components/crumbs.pug
+			.seller
+				.about
+					// При наличии у пользователя аватара профиля удалить класс STUB
+					.image.stub(style="background-image: url(../../img/boy.svg)")
+					h3.name Taya Jones
+					.tariff-plan_mobile
+							svg.tariff-plan_mobile__icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-star")
+							.tariff-plan_mobile__info
+								p.term 12 month
+								p.remaining 246 of 365 days remaining
+							.button.tariff-plan_mobile__update
+								a.link Update plan
+					.button.edit-account
+						a.link(href="") Edit my account
+					p.place New York, USA
+					.contacts-block.my-contacts
+						// Ссылка и название питомника отображаются только если заполнена графа KENNEL при регистрации пользователя
+						p.cattery-name Spolbo
+						a.website.my-profile__website(href="")
+							span.link www.spolbo.com
+							svg.link-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-link")
+
+						.phone
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-phone")
+							p.text +7 123 456-78-90
+						.email
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-envelope")
+							p.text a_dementiev@gmail.com
+					// Информация о питомнике отображаются только если заполнена графа KENNEL при регистрации пользователя
+					.cattery-description
+						.description#js_trancate-box 
+							p Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. <br> <br> We started breeding French Bulldog in partnership with. DSFBASKJBFDASFBelcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas.
+							a.show-more.js_more-info
+					.button.edit-account.edit-account_mobile
+						a.link(href="") Edit my account
+					.button.add-dog.add-dog_mobile
+						a.link(href="") Add a dog
+				.seller-dogs
+					.public
+						.tariff-plan
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-star")
+							.info
+								p.term 12 month
+								p.remaining 246 of 365 days remaining
+							.button.tariff_update
+								a.link Update plan
+						.my-dogs__header
+							.my-dogs__title-block
+								h3.title My available dogs
+								p.info-text Собаки, которых видят другие пользователи
+							a.button.add-dog(href="") Add a dog
+
+						-var public = [{bg: '../img/puppy1.png', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '../img/puppy2.png', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Lily', gender: 'female', breed: 'Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'female', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', hide_gen: true, cost: '2500 $'}]
+						each dog in public
+							.dog-block.js_dog
+								// При наличии у фото собаки удалить класс STUB
+								if dog.bg
+									.image(style="background-image: url("+ dog.bg +")")
+								else
+									.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+								.info-block
+									svg(class="gender " + dog.gender)
+										use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+									.marks
+										.mark.sale For sale
+										.mark.stud For stud
+									h2.name= dog.name
+									.breed= dog.breed
+									.old= dog.age
+									.genetics
+										p.genetic= dog.gens
+										.help.js_help
+											svg.icon
+												use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+											a.help__link.js_help-block(href="") 
+												p.text About genotype
+												svg.arrow
+													use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+										if dog.hide_gen
+											.help.hide.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite.svg#icon-eye_2")
+												a.help__link.js_help-block
+													p.text This dog's genom is hidden
+								.pricies
+									.sale
+										p.text Sale price
+										p.none
+									.stud
+										p.text Stud price
+										p.price 500 $
+								.buttons-block
+									a.edit-dog.link(href="")
+										svg.icon
+											use(xlink:href="../img/symbol_sprite.svg#icon-pencil")
+									a.delete-dog.link.js_delete
+										svg.icon
+											use(xlink:href="../img/symbol_sprite.svg#icon-trash")
+					.private
+						.my-dogs__header
+							.my-dogs__title-block
+								h3.title My private dogs
+								p.info-text Собаки, которых видите только вы
+						-var private = [{bg: '../img/puppy1.png', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '../img/puppy2.png', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Lily', gender: 'female', breed: 'Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'female', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}]
+						each dog in private
+							.dog-block.js_dog
+									// При наличии у фото собаки удалить класс STUB
+									if dog.bg
+										.image(style="background-image: url("+ dog.bg +")")
+									else
+										.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+									.info-block
+										svg(class="gender " + dog.gender)
+											use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+										h2.name= dog.name
+										.breed= dog.breed
+										.old= dog.age
+										.genetics
+											p.genetic= dog.gens
+											.help.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+												a.help__link.js_help-block(href="") 
+													p.text About genotype
+													svg.arrow
+														use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+									.pricies
+										.sale
+											p.text Sale price
+											p.none
+										.stud
+											p.text Stud price
+											p.none
+									.buttons-block
+										a.edit-dog.link(href="")
+											svg.icon
+												use(xlink:href="../img/symbol_sprite.svg#icon-pencil")
+										a.delete-dog.link.js_delete
+											svg.icon
+												use(xlink:href="../img/symbol_sprite.svg#icon-trash")
+				.seller-dogs_mobile.my-dogs_mobile
+					h1.seller-dogs_mobile__title My available dogs(#{public.length})
+					p.seller-dogs_mobile__subtitle Собаки, которых видят другие пользователи
+					.seller-dogs_mobile__dogs.puppies.js_mobile-dogs__slider
+						each dog in public
+							.puppy.seller-dogs_mobile__dogs__dog
+								if dog.bg
+									.image(style="background-image: url(" + dog.bg + ')')
+								else
+									.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+								h2.name= dog.name
+								.info
+									svg(class="gender " + dog.gender)
+										use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+									.breed-age
+										p.breed= dog.breed
+										p.age= dog.age
+								.genetics
+									p.genetic= dog.gens
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+								p.cost.js_cost= dog.cost	
+					.pagination
+							svg.prev.disabled.js_prev-dog
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+							p.pages <span class="active js_active-element" data-active="1">1 </span>/ #{public.length}
+							-var max = public.length
+							svg.next.js_next-dog(data-end= max)
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+				.seller-dogs_mobile
+					h1.seller-dogs_mobile__title My available dogs(#{private.length})
+					p.seller-dogs_mobile__subtitle Собаки, которых видят другие пользователи
+					.seller-dogs_mobile__dogs.puppies.js_mobile-dogs__slider
+						each dog in private
+							.puppy.seller-dogs_mobile__dogs__dog
+								if dog.bg
+									.image(style="background-image: url(" + dog.bg + ')')
+								else
+									.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+								h2.name= dog.name
+								.info
+									svg(class="gender " + dog.gender)
+										use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+									.breed-age
+										p.breed= dog.breed
+										p.age= dog.age
+								.genetics
+									p.genetic= dog.gens
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+								p.cost.js_cost= dog.cost	
+					.pagination
+							svg.prev.disabled.js_prev-dog
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+							p.pages <span class="active js_active-element" data-active="1">1 </span>/ #{private.length}
+							-var max = private.length
+							svg.next.js_next-dog(data-end= max)
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+		footer
+			include components/footer.pug
+		include components/contact-seller.pug
+		include components/dog-limit.pug
+	

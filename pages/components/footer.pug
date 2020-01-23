@@ -1,0 +1,42 @@
+.footer
+	ul.footer__list
+		-var items = [{tittle:'Services', items: ['Calculator','Find a Puppy','Stud Service']},{tittle:'Product', items: ['How It Works','Pricing','FAQ']}, {tittle:'Company', items: ['About','Blog','Contact Us']}]
+		each item in items
+			li.footer__list__items
+				ul.items__list
+					li.tittle= item.tittle
+					each val in item.items
+						li.items__list_item
+							a(href='#')= val
+	.subscribe.js_subscribe-block
+		h4.subscribe__tittle BullDNA Newsletter
+		form.wrapper.js_wrapper.js_subscribe-form()
+			p.subscribe__text Subscribe to our newsletter and receive the latest news and insights about website development
+			.subscribe__input-block.js_input-block.input-block(error-msg="Enter valid E-mail")
+				input(
+					class="input js_input"
+					type="text"
+					placeholder="Enter your e-mail address"
+				)
+				a.subscribe__button.js_subscribe
+					svg.icon
+						use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+		.success.js_active
+			p.text Subscribe to our newsletter and receive the latest news and insights about website development
+			p.text A confirmation e-mail has been sent to the e-mail address you provided <span class='mail js_mail'></span>. Click the link in the e-mail to confirm and activate the subscription.
+	.copyright
+		span.site_name © 2018 BullDNA
+		-var links = [{text:'Terms of Use', href:'#', class:''}, {text:'Privacy', href:'#', class:''}, {text:'info@spolbo.com', href:'#', class:' email'}]
+		each link in links
+			a(
+				class= 'copyright__link' + link.class
+				href= link.href
+			)= link.text
+		a.copyright__link.fb
+			svg.fb_logo
+				use(xlink:href="../img/symbol_sprite.svg#icon-facebook-logo")
+		.copyright__developed
+			a(
+				href="/"
+				target="_blank"
+			) <span class="dark">Developed by</span> DFedyunin

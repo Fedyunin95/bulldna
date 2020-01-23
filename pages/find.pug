@@ -1,0 +1,294 @@
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-
+				var crumbList = [
+					{name:'Home', link:'main.html'},
+					{name:'Find a puppy', link:''}
+				]
+			include components/crumbs.pug
+			.find-block
+				h1.title Find a puppy
+				-
+					var filters = [
+						{
+							title: 'Breed', 
+							blocks: [
+								{
+									class:"", 
+									boxClass:'', 
+									label:'Any breed', 
+									labelClass:''
+								},
+								{
+									class:"", 
+									boxClass:'', 
+									label:'American Pitbull', 
+									labelClass:''
+								},
+								{
+									class:"", 
+									boxClass:'', 
+									label:'Chihuahia', 
+									labelClass:''}
+									,
+								{
+									class:"", 
+									boxClass:'', 
+									label:'English Bulldog', 
+									labelClass:''}
+									,
+								{
+									class:"", 
+									boxClass:'', 
+									label:'French Bulldog', 
+									labelClass:''}
+									,
+								{
+									class:"", 
+									boxClass:'', 
+									label:'Pug', 
+									labelClass:''
+								}
+							]
+						},
+						{
+							title: 'Gender', 
+							blocks: [
+										{
+											class:"", 
+											boxClass:'', label:'Any gender', 
+											labelClass:''
+										},
+										{
+											class:"", 
+											boxClass:'', label:'Male', 
+											labelClass:''
+										},
+										{
+											class:"", 
+											boxClass:'', label:'female', 
+											labelClass:''
+										}
+									]
+						},
+						{
+							title: 'Age', 
+							blocks: [
+										{
+											class:"",
+											boxClass:'',
+											label:'Any age',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Up to 8 weeks',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Up to 12 weeks',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Up to 16 weeks',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Older than 16 weeks',
+											labelClass:''
+										}
+									]
+						},
+						{
+							title: 'Color', 
+							blocks: [
+										{
+											class:"",
+											boxClass:'',
+											label:'Any color',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Black tan',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Black tan pied',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Black trindle',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Black trindle pied',
+											labelClass:''}
+									]
+						},
+						{
+							title: 'Country', 
+							blocks: [
+										{
+											class:"",
+											boxClass:'',
+											label:'Any country',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Australia',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Austria',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Belarus',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Belgium',
+											labelClass:''}
+									]
+						},
+						{
+							title: 'City', 
+							blocks: [
+										{
+											class:"",
+											boxClass:'',
+											label:'Any city',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Australia',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Austria',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Belarus',
+											labelClass:''},
+										{
+											class:"",
+											boxClass:'',
+											label:'Belgium',
+											labelClass:''}
+									]
+						}
+					]
+				.filters
+					each filter in filters
+						form.filter.js-filter
+							h4.title= filter.title
+							a.reset.js-reset_filter Reset
+							.checkboxs.scroll-pane
+									each block in filter.blocks
+										include components/checkbox.pug
+				.puppies
+					-
+						var elements = [
+							{
+								bg: '../img/puppy1.png', 
+								name: 'Lily', 
+								gender: 'male', 
+								breed: 'French Bulldog', 
+								age: '2y 4m', 
+								gens: 'AtAy b Dd KbrKy eEm NS', 
+								cost: '2500 $'
+							},
+							{
+								bg: '../img/puppy2.png', 
+								name: 'Lily', 
+								gender: 'male', 
+								breed: 'French Bulldog', 
+								age: '2y 4m', 
+								gens: 'AtAy b Dd KbrKy eEm NS', 
+								cost: '2500 $'
+							},
+							{
+								bg: '', 
+								name: 'Lily', 
+								gender: 'female', 
+								breed: 'French Bulldog', 
+								age: '2y 4m', 
+								gens: 'AtAy b Dd KbrKy eEm NS', 
+								cost: '2500 $'
+							},
+							{
+								bg: '', 
+								name: 'Lily', 
+								gender: 'male', 
+								breed: 'French Bulldog', 
+								age: '2y 4m', 
+								gens: 'AtAy b Dd KbrKy eEm NS', 
+								cost: '2500 $'
+							}
+						]
+					each dog in elements
+						// a.puppy-wrapper(href="#")
+						.puppy
+							a.puppy-link(href="")
+								if dog.bg
+									.image(style="background-image: url(" + dog.bg + ')')
+								else
+									.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+								svg.like.js_like
+									use(xlink:href="../img/symbol_sprite_default.svg#icon-like_1")
+								h2.name= dog.name
+								.info
+									p.breed.breed_mobile= dog.breed
+									svg(class="gender " + dog.gender)
+										use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+									.breed-age
+										p.breed= dog.breed
+										p.age= dog.age
+								.genetics
+									p.genetic= dog.gens
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+								p.cost.js_cost= dog.cost
+		form.filters_mobile
+			.filters_mobile__header
+				h4.filters_mobile__title(data-filters-count='0') Filters
+				.filters_mobile__close
+			.filters_mobile__body
+				each filter in filters
+					.filters_mobile__body__filter
+						.filters_mobile__body__filter__header
+							h5.filters_mobile__body__filter__title Breed
+							p.filters_mobile__body__filter__active-filter Any
+							.filters_mobile__body__filter__show-button
+						.filters_mobile__body__filter__list
+							each block in filter.blocks
+								include components/checkbox.pug
+			.filters_mobile__buttons
+				.filters_mobile__buttons__button.reset-button.js_reset-all Reset all
+				.filters_mobile__buttons__button.submit-button.js_apply-filter Apply
+		footer
+			include components/footer.pug

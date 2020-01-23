@@ -1,0 +1,90 @@
+html(lang="en")
+	include components/head.pug
+	body
+		header.main-page.js_header
+			include components/header.pug
+		.main
+			.banner__top
+				.banner__block
+					h1.banner__block_tittle DNA Calculator for dog breeders
+					p.banner__block_text BullDNA is an online tool for predicting the color of offspring, selecting a partner for mating and searching for puppies of a certain color
+					a.button.create-account Get your free account
+				.dogs
+					.parents
+						.parents__dog.parents__dog_mum
+							svg
+								use(xlink:href="../img/symbol_sprite_default.svg#icon-bulldog_parent_1")
+							span.dog_tittle.parent__dog_title mum
+						.parents__dog.parents__dog_dad
+							svg
+								use(xlink:href="../img/symbol_sprite_default.svg#icon-bulldog_parent_2")
+							span.dog_tittle.parent__dog_title dad
+					svg.figure
+						use(xlink:href="../img/symbol_sprite.svg#icon-brace")
+					.dogs__result
+						-var dogs = [{class: ' result__dog_first', img: '../img/symbol_sprite_default.svg#icon-bulldog_kid_1', text: '98%'},{class: ' result__dog_second', img: '../img/symbol_sprite_default.svg#icon-bulldog_kid_2', text: '94%'},{class: ' result__dog_third', img: '../img/symbol_sprite_default.svg#icon-bulldog_kid_3', text: '86%'},{class: ' result__dog_fours', img: '../img/symbol_sprite_default.svg#icon-bulldog_kid_4', text: '75%'},{class: ' result__dog_fifth', img: '../img/symbol_sprite_default.svg#icon-bulldog_kid_5', text: '25%'}]
+						each dog in dogs
+							div(class="dog" + dog.class)
+								svg.dog__image
+									use(xlink:href= dog.img)
+								span.dog_tittle.dogs__result-tittle= dog.text
+			.banner_small
+					-var blocks = [{class:" manage-color_block", img: "../img/symbol_sprite.svg#icon-pantone", tittle:'Find a puppy', text:'Manage the color of the offspring'}, {class:" find_block", img: "../img/symbol_sprite.svg#icon-dog-foot", tittle:'Find a puppy', text:'Find puppies for sale in real time from professional breeders'}, {class:" organize_block", img: "../img/symbol_sprite.svg#icon-heart", tittle:'Organize the mating', text:'Find the ideal partner for mating for your dog by filtering and calculating DNA for a better match'}]
+					each block in blocks
+						div(class="banner_small__block" + block.class)
+							svg.banner_small__block-icon
+								use(xlink:href= block.img)
+							span.banner_small__block-tittle= block.tittle
+							p.description= block.text
+			.wrapper
+				.block.block_top
+					.block__image
+						img.image(src="../img/1.png")
+					.block__info
+						.block__info-icon
+							svg.block__info-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-pantone")
+							svg.block__info-icon_back
+								use(xlink:href='../img/symbol_sprite.svg#icon-pantone-background')
+						h4.block__info-tittle Manage the color of the offspring
+						p.block__info-text A quick genetic progeny color prognosis based on the DNA of the parents.
+						p.block__info-text A quick genetic progeny color prognosis based on the DNA of the parents.	
+				.block.block_middle
+					.block__info
+						.block__info-icon
+							svg.block__info-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-dog-foot")
+							svg.block__info-icon_back
+								use(xlink:href='../img/symbol_sprite.svg#icon-foot-back')
+						h4.block__info-tittle Find a puppy
+						p.block__info-text Find puppies for sale in real time from professional breeders.
+						p.block__info-text BullDNA is an online tool for predicting the color of offspring, selecting a partner for mating and searching for puppies of a certain color	
+					.block__image
+						img.image(src="../img/2.png")
+						// .image(style="background-image: url(../img/2.png)")
+				.block.block_bottom
+					.block__image
+						img.image(src="../img/3.png")
+						// .image(style="background-image: url(../img/3.png)")
+					.block__info
+						.block__info-icon
+							svg.block__info-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-heart")
+							svg.block__info-icon_back
+								use(xlink:href='../img/symbol_sprite.svg#icon-heart-background')
+						h4.block__info-tittle Organize the mating
+						p.block__info-text Find the ideal partner for mating for your dog by filtering and calculating DNA for a better match.
+						p.block__info-text BullDNA is an online tool for predicting the color of offspring, selecting a partner for mating and searching for puppies of a certain color
+			.banner_small.banner_bottom
+				.banner_bottom__image
+					svg.img
+						use(xlink:href="../img/symbol_sprite_default.svg#icon-dogs")
+					img.fon(src="../../img/rectangle-dotted.svg")
+				.banner_bottom__block
+					h3.tittle Get started today
+					p.text BullDNA gives you the online tools to be yourself on a bigger stage
+					a.button.create-account Get your free account
+		footer.main-footer
+			include components/footer.pug
+		include components/login_popup.pug	
+		include components/forgot.pug	

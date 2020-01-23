@@ -1,0 +1,42 @@
+.crumbs {
+	max-width: 1160px;
+	margin: 71px auto 0;
+	@media screen and (max-width: 1200px) {
+		max-width: 320px;
+		padding: 0 30px;
+		margin: 20px auto 0;
+	}
+	&-list {
+		display: flex;
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: 500;
+		@media screen and (max-width: 1200px) {
+			font-size: 12px;
+			line-height: 20px;
+			overflow: hidden;
+		}
+		.item {
+			margin-right: 38px;
+			position: relative;
+			white-space: nowrap;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: calc(100% + 10px);
+				width: 20px;
+				height: 1px;
+				opacity: 0.25;
+				background-color: #000;
+			}
+			&:last-child {
+				margin-right: 0;
+				color: #999;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

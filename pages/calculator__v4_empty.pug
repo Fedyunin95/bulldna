@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Calculator', link:''}, {name:'Forecast the offspring of my dogs', link:''}]
+			include components/crumbs.pug
+			section.calculator-wrapper
+				h1.title Color DNA Calculator
+				section.calculator__steps-wrapper
+					section.calculator__steps
+						.calculator__steps__item
+							h2.title Forecast the offspring of <br> my dogs
+							.calculator__steps__item-number 1
+						.calculator__steps__item
+							h2.title Forecast the offspring <br> by genodate
+							.calculator__steps__item-number 2
+						.calculator__steps__item
+							h2.title Search for a male for offspring of a certain color
+							.calculator__steps__item-number 3
+						.calculator__steps__item.active
+							h2.title Search for a male for the offspring of a particular genome
+							.calculator__steps__item-number 4
+				section.calculator
+					article.calculator__instruction-block.js_instruction-block
+						h3.calculator__instruction-block__title.js_instruction-title How It Works
+						article.calculator__instruction-block__instruction.js_instruction
+							p.instruction-text This case is calculating the highest possibilities of dogs located around the breeder to get highest chance to produce the puppy with the required genetic code.
+							.instruction-quote 
+								p.quote__text EXAMPLE: I want to buy a lilac tan puppy with cream (DNA: bb dd atat Ee kyky NN) ; Where is the nearest male and female from me with the highest chance that will produce this puppy for me that I can contact the breeder in advance?
+							h4.instruction-title Instruction
+							ul.instruction__list
+								li.instruction__list__item
+									p.instruction__list__item-number 1
+									p.instruction__list__item-text Добавьте собак в свой аккаунт
+								li.instruction__list__item
+									p.instruction__list__item-number 2
+									p.instruction__list__item-text Выберите в списке "Мои собаки" и "Избранные собаки" кобелей и сук, которых хотите проверить/сравнить. Кликните по темной карточке для выбора. <br> Чтобы исключить из расчета выбранную собаку кликните на нее еще раз, карточка станет темной. 
+								li.instruction__list__item
+									p.instruction__list__item-number 3
+									p.instruction__list__item-text Нажмите кнопку "Расчитать прогноз потомства"
+					article.calculator__my-dogs
+						.calculator__my-dogs__header 
+							h2.calculator__my-dogs__title My females
+							p.calculator__my-dogs__value (0)
+						.calculator__my-dogs__body.empty
+							svg.icon
+								use(xlink:href="../img/symbol_sprite_default.svg#icon-dog-house-colored")
+							p.calculator__my-dogs_empty__message You didn't add your dogs yet
+							.button.calculator__my-dogs_empty__add-button 
+								a.button__link(href="add_dog.html") Add my dog
+					article.calculator__gender-blocks
+						.calculator__gender-blocks__item
+							.calculator__gender-blocks__item__header.male
+								svg.calculator__gender-blocks__item__icon
+									use(xlink:href="../img/symbol_sprite.svg#icon-male")
+								h4.calculator__gender-blocks__item__title Males location
+							.calculator__gender-blocks__item__body_location
+								-var boxs = [{class:'dropbox js_box', label:'Country', list : ['Any country','England', 'Russia', 'China', 'Japan'], img:'../img/symbol_sprite.svg#icon-down-arrow'}, {class:'dropbox js_box', label:'City', list : ['Any city', 'Moscow', 'Kazan', 'London', 'Paris'], img:'../img/symbol_sprite.svg#icon-down-arrow'}]
+								each box in boxs
+									include components/dropbox.pug
+						.calculator__gender-blocks__item
+							.calculator__gender-blocks__item__header.female
+								svg.calculator__gender-blocks__item__icon
+									use(xlink:href="../img/symbol_sprite.svg#icon-female")
+								h4.calculator__gender-blocks__item__title Females
+							.calculator__gender-blocks__item__body.empty
+								p.calculator__gender-blocks__item__body__preview The selected female will be here
+					article.calculator__gender-blocks
+						.calculator__gender-blocks__item.calculator__gender-blocks__item_center
+							-
+								var block = {
+												class: 'add-dog__description__genom-block', 
+												title: 'DNA',
+												content: [	
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'At' }, 
+																	{class: "genom", name: 'Ay' }, 
+																	{class: "genom", name: 'a' }, 
+																	{class: "title", name: 'Agouti' },
+																	{class: "genom", name: 'At' }, 
+																	{class: "genom", name: 'Ay' }, 
+																	{class: "genom", name: 'a' }
+														  		] 
+															},
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'B' },
+																	{class: "genom", name: 'b' }, 
+																	{class: "title", name: 'Brown' },
+																	{class: "genom", name: 'B' }, 
+																	{class: "genom", name: 'b' }
+														  		] 
+															},
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'D' }, 
+																	{class: "genom", name: 'd' },
+																	{class: "title", name: 'Dilute' },
+																	{class: "genom", name: 'D' }, 
+																	{class: "genom", name: 'd' },
+														  		] 
+															},
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'Kbr' }, 
+																	{class: "genom", name: 'Ky' },
+																	{class: "title", name: 'Dominant black' },
+																	{class: "genom", name: 'Kbr' }, 
+																	{class: "genom", name: 'Ky' },
+														  		] 
+															},
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'E' }, 
+																	{class: "genom", name: 'e' }, 
+																	{class: "genom", name: 'EM' }, 
+																	{class: "title", name: 'MCR1' },
+																	{class: "genom", name: 'E' }, 
+																	{class: "genom", name: 'e' }, 
+																	{class: "genom", name: 'EM' }
+														  		] 
+															},
+															{ 
+																elements: [ 
+																	{class: "genom", name: 'N' }, 
+																	{class: "genom", name: 'S' },
+																	{class: "title", name: 'Pied' },
+																	{class: "genom", name: 'N' }, 
+																	{class: "genom", name: 'S' },
+														  		] 
+															},
+														]													
+											}
+							include components/genom-block.pug
+					a.button.calculator__calculate-button Search for a male
+			.calculator-wrapper_mobile
+				h1.title Color DNA Calculator
+				.calculator__stub
+					svg.calculator__stub__warning-icon
+						use(xlink:href="../img/symbol_sprite_default.svg#icon-warning")
+					p.calculator__stub__text To use a Calculator, enlarge your browser window, or switch to a computer with a larger screen resolution
+		footer
+			include components/footer.pug

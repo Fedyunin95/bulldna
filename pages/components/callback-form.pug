@@ -1,0 +1,13 @@
+section.about__banner_bottom
+			h3.title Have a question?
+			form.question
+				-var blocks = [{class:'', input_class:'field name', type:'text', placeholder:'Name', error_msg:'Enter your name'}, {class:'', input_class:'field email', type:'text', placeholder:'E-mail', img:'', error_msg:'Enter valid e-mail'}]
+					each block in blocks
+						include input-block.pug
+				-var boxs = [{class:'dropbox last js_box', label:'Subject', list : ['Warning', 'Error', 'Question', 'Just hello'], img:'../img/symbol_sprite.svg#icon-down-arrow'}]
+					each box in boxs
+						include dropbox.pug
+				.message-text
+					.input-block.textarea
+							textarea(class="field" maxlength="512" placeholder="Your message...")
+					a.button.send-msg.js_send-msg Send Message

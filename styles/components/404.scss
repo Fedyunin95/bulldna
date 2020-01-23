@@ -1,0 +1,81 @@
+.error-page {
+	width: 100%;
+	background-color: rgba(243, 232, 234, 0.86);
+	margin-top: 50px;
+	@media screen and (max-width: 1200px) {
+		margin-top: 0;
+	}
+	.wrapper {
+		width: 100%;
+		max-width: 1160px; min-height: 810px;
+		display: flex;
+		margin: 0 auto;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		position: relative;
+		@media screen and (max-width: 1200px) {
+			height: auto;
+			min-height: unset;
+			max-height: unset;
+		}
+		.title {
+			font-size: 80px;
+			line-height: 1;
+			font-weight: 800;
+			margin-bottom: 60px;
+			@media screen and (max-width: 1200px) {
+				font-size: 30px;
+				line-height: 40px;
+				margin-bottom: 30px;
+				margin-top: 70px;
+			}	
+		}
+		.info {
+			font-size: 20px;
+			line-height: 1;
+			font-weight: 500;
+			margin-bottom: 110px;
+			@media screen and (max-width: 1200px) {
+				font-size: 15px;
+				line-height: 20px;
+				margin-bottom: 50px;
+			}	
+		}
+		.homepage__link {
+			display: flex;
+			font-size: 14px;
+			line-height: 20px;
+			height: 20px;
+			font-weight: bold;
+			justify-content: center;
+			align-items: center;
+			@media screen and (max-width: 1200px) {
+				margin-bottom: 163px;
+			}	
+			.text {
+				margin-right: 20px;
+			}
+			.arrow {
+				max-height: 16px;
+				max-width: 14px;
+			}
+		}
+		.dog {
+			position: absolute;
+			bottom: 0;
+			width: 200px; height: 200px;
+			transition: 0.5s;
+			transform: translate(-50%, 130px);
+			cursor: pointer;
+			left: 50%;
+			@media screen and (max-width: 1200px) {
+				width: 124px;
+				height: 170px;
+			}	
+			&:hover {
+				transform: translate(-50%, 60px);
+			}
+		}
+	}
+}

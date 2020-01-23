@@ -1,0 +1,15 @@
+.popup.js_forgot.js_popup
+	form.forgot(action="")
+		.close.js_close
+		h3.tittle Forgot your password?
+		p.text Don't worry! Enter the email address you registered with and we’ll send you a reset link
+		-var blocks = [{class:'', input_class:'field', type:'text', placeholder:'Email', error_msg: 'wrong email address'}]
+		each block in blocks
+			include input-block.pug
+		a.button.reset Reset Password
+		a.sign-in.js_sign-in Sign In
+	.send.forgot
+		.close.js_close
+		h3.tittle Email send!
+		p.noty An e-mail has been sent with further instructions
+		a.button.js-close Reset Password

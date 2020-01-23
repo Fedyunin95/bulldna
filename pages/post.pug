@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Blog', link:''}, {name:'How to Minimize Separation Anxiety When You Must Leave Your Pet', link:''}]
+			include components/crumbs.pug
+			section.post
+				.post__wrap
+					h1.post__title How to Minimize Separation Anxiety When You Must Leave Your Pet
+					p.post__date 20 aug 2018
+					article.post__content
+						section.post__content__header
+							.content__image
+								.content__image__pic(style="background-image: url(../img/puppy1.png)")
+								p.content__image__description Image Description (may be absent)
+							.content__short-desciption
+								p.content__short-desciption__text Bulldogs are a fan-favorite for many reasons. Their wrinkly faces, bodily folds and endearing personalities continue to charm Americans, landing them the #16 spot on PuppySpot’s list of most popular dog breeds! Learn more about the adorable Bulldog with these 6 need-to-know facts!
+						// Примеры элементов для содержимого поста
+						section.post__content__body
+							// Нумерованный список
+							ol.numeric__list_title
+								-var listItems = [{title:'They have a not-so-proud history', text:'The Bulldog’s name comes from its history in bullbaiting, a popular sport in 19th century England which was later banned under the Cruelty of Animal Act of 1835.'}, {title:'They have easy-to-care-for coats', text:'Because of their short hair, grooming Bulldogs is fairly easy. In fact, they only need to be bathed once or twice a year!'}, {title:'They have a little in common with a British Prime Minister', text:'Former British Prime Minister Winston Churchill was nicknamed the “British Bulldog” because of his looks and demeanor. He was not an owner of the dog, however.'}, {title:'They’re popular mascots', text:'While the Bulldog became a mascot for the U.S. military during the 60’s, they’re also a popular choice for about 40 universities across the country. While gentle-natured pets, the intimidating features they were originally bred for give a threatening impression of the sports teams they represent.'}, {title:'They run Los Angeles', text:'Bulldogs are a popular breed choice for the rich and famous. Some well-known celebrity Bulldog owners include Leonardo DiCaprio, Reese Witherspoon, David Beckham, Martha Stewart and Zac Efron.'}, {title:'They can be surprisingly sporty', text:'Bulldogs are known for being couch potatoes, but they can be trained to ride skateboards quite well! One Bulldog named Otto broke the Guinness World Record for “Longest Human Tunnel Traveled Through by a Skateboarding Dog” in 2015 by skating under the legs of 30 people in Lima, Peru.'}]
+								each item,index in listItems
+									li.numeric__list_title__item
+										p.numeric__list_title__item-index= (index+1) + '.'
+										h4.item__title= item.title
+										p.item__text= item.text
+							.quote 
+								p.quote__text Former British Prime Minister Winston Churchill was nicknamed the “British Bulldog” because of his looks and demeanor. He was not an owner of the dog, however.
+							h3.content__body__title Table Style
+							.content__body__table-block
+								h4.table-block__title Aqouti
+								.table-block__table
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Sable
+										.table-block__table__cell ay, ay
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Sable (Black-and-Tan / Tricolor hidden)
+										.table-block__table__cell ay, at
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Black-and-Tan / Tricolor
+										.table-block__table__cell at, at
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Solid Black / Bicolor
+										.table-block__table__cell a, a
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Sable (Solid Black / Bicolor hidden)
+										.table-block__table__cell ay, a
+									.table-block__table__row
+										.table-block__table__cell.table-block__table__cell_dark Black-and-Tan / Tricolor (Solid Black / Bicolor hidden)
+										.table-block__table__cell at, a
+							.content__body__table-block
+								.table-block__table_painted
+									.table-block__table__row
+										.table-block__table__cell Sable
+										.table-block__table__cell.table-block__table__cell_dark ay, ay
+									.table-block__table__row
+										.table-block__table__cell Sable (Black-and-Tan / Tricolor hidden)
+										.table-block__table__cell.table-block__table__cell_dark ay, at
+									.table-block__table__row
+										.table-block__table__cell Black-and-Tan / Tricolor
+										.table-block__table__cell.table-block__table__cell_dark at, at
+									.table-block__table__row
+										.table-block__table__cell Solid Black / Bicolor
+										.table-block__table__cell.table-block__table__cell_dark a, a
+									.table-block__table__row
+										.table-block__table__cell Sable (Solid Black / Bicolor hidden)
+										.table-block__table__cell.table-block__table__cell_dark ay, a
+									.table-block__table__row
+										.table-block__table__cell Black-and-Tan / Tricolor (Solid Black / Bicolor hidden)
+										.table-block__table__cell.table-block__table__cell_dark at, a
+							h3.content__body__title Обтекание картинки текстом
+							.content__body__info-block
+								img.content__body__info-block__text-image(src="../img/puppy1.png")
+								p.content__body__info-block__text-paragraph The Bulldog’s name comes from its history in bullbaiting, a popular sport in 19th century England which was later banned under the Cruelty of Animal Act of 1835.
+								p.content__body__info-block__text-paragraph Because of their short hair, grooming Bulldogs is fairly easy. In fact, they only need to be bathed once or twice a year!
+								p.content__body__info-block__text-paragraph Former British Prime Minister Winston Churchill was nicknamed the “British Bulldog” because of his looks and demeanor. He was not an owner of the dog, however.
+								p.content__body__info-block__text-paragraph While the Bulldog became a mascot for the U.S. military during the 60’s, they’re also a popular choice for about 40 universities across the country. While gentle-natured pets, the intimidating features they were originally bred for give a threatening impression of the sports teams they represent.
+							.slogan-block
+								svg.quotes
+									use(xlink:href="../img/symbol_sprite.svg#icon-quotes")
+								.citation
+									p.text When I'm stressed I just look at my dog. It reminds of how simple things really are
+									p.aftor Winston Churchill, British Prime Minister
+							h3.content__body__title List Style
+							.list-block
+								h3.list-block__title Numbered List
+								ol.list-block__list.list-block__list_numeric
+									-var listItems = ['The Bulldog’s name comes from its history in bullbaiting, a popular sport in 19th century England which was later banned under the Cruelty of Animal Act of 1835.','Because of their short hair, grooming Bulldogs is fairly easy. In fact, they only need to be bathed once or twice a year!', 'Former British Prime Minister Winston Churchill was nicknamed the “British Bulldog” because of his looks and demeanor. He was not an owner of the dog, however.', 'While the Bulldog became a mascot for the U.S. military during the 60’s, they’re also a popular choice for about 40 universities across the country. While gentle-natured pets, the intimidating features they were originally bred for give a threatening impression of the sports teams they represent.', 'Bulldogs are a popular breed choice for the rich and famous. Some well-known celebrity Bulldog owners include Leonardo DiCaprio, Reese Witherspoon, David Beckham, Martha Stewart and Zac Efron.']
+									each item in listItems
+										li.list-block__list__item
+											p.list-block__list__item-content= item
+							.list-block
+								h3.list-block__title Numbered List
+								ul.list-block__list
+									-var listItems = ['The Bulldog’s name comes from its history in bullbaiting, a popular sport in 19th century England which was later banned under the Cruelty of Animal Act of 1835.','Because of their short hair, grooming Bulldogs is fairly easy. In fact, they only need to be bathed once or twice a year!', 'Former British Prime Minister Winston Churchill was nicknamed the “British Bulldog” because of his looks and demeanor. He was not an owner of the dog, however.', 'While the Bulldog became a mascot for the U.S. military during the 60’s, they’re also a popular choice for about 40 universities across the country. While gentle-natured pets, the intimidating features they were originally bred for give a threatening impression of the sports teams they represent.', 'Bulldogs are a popular breed choice for the rich and famous. Some well-known celebrity Bulldog owners include Leonardo DiCaprio, Reese Witherspoon, David Beckham, Martha Stewart and Zac Efron.']
+									each item in listItems
+										li.list-block__list__item
+											p.list-block__list__item-content= item
+						a.post__link_back(href="blog.html") 
+							svg.post__link_back__icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+							p.post__link_back__text Back to blog
+		footer
+			include components/footer.pug

@@ -1,0 +1,86 @@
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+  overflow: hidden;
+  position: relative; }
+
+.jspPane {
+  position: absolute; }
+
+.jspVerticalBar {
+  background: red;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px; }
+
+.jspHorizontalBar {
+  background: red;
+  bottom: 0;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+.jspCap {
+  display: none; }
+
+.jspHorizontalBar .jspCap {
+  float: left; }
+
+.jspTrack {
+  background: #dde;
+  position: relative; }
+
+.jspDrag {
+  background: #bbd;
+  cursor: pointer;
+  left: 0;
+  position: relative;
+  top: 0; }
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%; }
+
+.jspArrow {
+  background: #50506d;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-indent: -20000px; }
+
+.jspDisabled {
+  background: #80808d;
+  cursor: default; }
+
+.jspVerticalBar .jspArrow {
+  height: 16px; }
+
+.jspHorizontalBar .jspArrow {
+  float: left;
+  height: 100%;
+  width: 16px; }
+
+.jspVerticalBar .jspArrow:focus {
+  border: 1px solid red;
+  outline: none; }
+
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%; }
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+  margin: 0 -3px 0 0; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpxdWVyeS5qc2Nyb2xscGFuZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7OztHQUtHO0FBRUg7RUFFQyxpQkFBZ0I7RUFDaEIsbUJBQWtCLEVBQ2xCOztBQUVEO0VBRUMsbUJBQWtCLEVBQ2xCOztBQUVEO0VBRUMsZ0JBQWU7RUFDZixhQUFZO0VBQ1osbUJBQWtCO0VBQ2xCLFNBQVE7RUFDUixPQUFNO0VBQ04sWUFBVyxFQUNYOztBQUVEO0VBRUMsZ0JBQWU7RUFDZixVQUFTO0VBQ1QsYUFBWTtFQUNaLFFBQU87RUFDUCxtQkFBa0I7RUFDbEIsWUFBVyxFQUNYOztBQUVEO0VBRUMsY0FBYSxFQUNiOztBQUVEO0VBRUMsWUFBVyxFQUNYOztBQUVEO0VBRUMsaUJBQWdCO0VBQ2hCLG1CQUFrQixFQUNsQjs7QUFFRDtFQUVDLGlCQUFnQjtFQUNoQixnQkFBZTtFQUNmLFFBQU87RUFDUCxtQkFBa0I7RUFDbEIsT0FBTSxFQUNOOztBQUVEOztFQUdDLFlBQVc7RUFDWCxhQUFZLEVBQ1o7O0FBRUQ7RUFFQyxvQkFBbUI7RUFDbkIsZ0JBQWU7RUFDUixlQUFjO0VBQ3JCLGVBQWM7RUFDZCxVQUFTO0VBQ1QsV0FBVTtFQUNWLHNCQUFxQixFQUNyQjs7QUFFRDtFQUVDLG9CQUFtQjtFQUNuQixnQkFBZSxFQUNmOztBQUVEO0VBRUMsYUFBWSxFQUNaOztBQUVEO0VBRUMsWUFBVztFQUNYLGFBQVk7RUFDWixZQUFXLEVBQ1g7O0FBRUQ7RUFFUSxzQkFBcUI7RUFDNUIsY0FBYSxFQUNiOztBQUVEO0VBRUMsb0JBQW1CO0VBQ25CLFlBQVc7RUFDWCxhQUFZLEVBQ1o7O0FBRUQsMENBQTBDO0FBQzFDO0VBRUMsbUJBQWtCLEVBQ2xCIiwiZmlsZSI6ImpxdWVyeS5qc2Nyb2xscGFuZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gKiBDU1MgU3R5bGVzIHRoYXQgYXJlIG5lZWRlZCBieSBqU2Nyb2xsUGFuZSBmb3IgaXQgdG8gb3BlcmF0ZSBjb3JyZWN0bHkuXHJcbiAqXHJcbiAqIEluY2x1ZGUgdGhpcyBzdHlsZXNoZWV0IGluIHlvdXIgc2l0ZSBvciBjb3B5IGFuZCBwYXN0ZSB0aGUgc3R5bGVzIGJlbG93IGludG8geW91ciBzdHlsZXNoZWV0IC0galNjcm9sbFBhbmVcclxuICogbWF5IG5vdCBvcGVyYXRlIGNvcnJlY3RseSB3aXRob3V0IHRoZW0uXHJcbiAqL1xyXG5cclxuLmpzcENvbnRhaW5lclxyXG57XHJcblx0b3ZlcmZsb3c6IGhpZGRlbjtcclxuXHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcbi5qc3BQYW5lXHJcbntcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcbi5qc3BWZXJ0aWNhbEJhclxyXG57XHJcblx0YmFja2dyb3VuZDogcmVkO1xyXG5cdGhlaWdodDogMTAwJTtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0cmlnaHQ6IDA7XHJcblx0dG9wOiAwO1xyXG5cdHdpZHRoOiAxNnB4O1xyXG59XHJcblxyXG4uanNwSG9yaXpvbnRhbEJhclxyXG57XHJcblx0YmFja2dyb3VuZDogcmVkO1xyXG5cdGJvdHRvbTogMDtcclxuXHRoZWlnaHQ6IDE2cHg7XHJcblx0bGVmdDogMDtcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0d2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5qc3BDYXBcclxue1xyXG5cdGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5qc3BIb3Jpem9udGFsQmFyIC5qc3BDYXBcclxue1xyXG5cdGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uanNwVHJhY2tcclxue1xyXG5cdGJhY2tncm91bmQ6ICNkZGU7XHJcblx0cG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uanNwRHJhZ1xyXG57XHJcblx0YmFja2dyb3VuZDogI2JiZDtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0bGVmdDogMDtcclxuXHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0dG9wOiAwO1xyXG59XHJcblxyXG4uanNwSG9yaXpvbnRhbEJhciAuanNwVHJhY2ssXHJcbi5qc3BIb3Jpem9udGFsQmFyIC5qc3BEcmFnXHJcbntcclxuXHRmbG9hdDogbGVmdDtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5qc3BBcnJvd1xyXG57XHJcblx0YmFja2dyb3VuZDogIzUwNTA2ZDtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgZGlyZWN0aW9uOiBsdHI7XHJcblx0ZGlzcGxheTogYmxvY2s7XHJcblx0bWFyZ2luOiAwO1xyXG5cdHBhZGRpbmc6IDA7XHJcblx0dGV4dC1pbmRlbnQ6IC0yMDAwMHB4O1xyXG59XHJcblxyXG4uanNwRGlzYWJsZWRcclxue1xyXG5cdGJhY2tncm91bmQ6ICM4MDgwOGQ7XHJcblx0Y3Vyc29yOiBkZWZhdWx0O1xyXG59XHJcblxyXG4uanNwVmVydGljYWxCYXIgLmpzcEFycm93XHJcbntcclxuXHRoZWlnaHQ6IDE2cHg7XHJcbn1cclxuXHJcbi5qc3BIb3Jpem9udGFsQmFyIC5qc3BBcnJvd1xyXG57XHJcblx0ZmxvYXQ6IGxlZnQ7XHJcblx0aGVpZ2h0OiAxMDAlO1xyXG5cdHdpZHRoOiAxNnB4O1xyXG59XHJcblxyXG4uanNwVmVydGljYWxCYXIgLmpzcEFycm93OmZvY3VzXHJcbntcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCByZWQ7XHJcblx0b3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuLmpzcENvcm5lclxyXG57XHJcblx0YmFja2dyb3VuZDogI2VlZWVmNDtcclxuXHRmbG9hdDogbGVmdDtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi8qIFl1ayEgQ1NTIEhhY2sgZm9yIElFNiAzIHBpeGVsIGJ1ZyA6KCAqL1xyXG4qIGh0bWwgLmpzcENvcm5lclxyXG57XHJcblx0bWFyZ2luOiAwIC0zcHggMCAwO1xyXG59XHJcbiJdfQ== */

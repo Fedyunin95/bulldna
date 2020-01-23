@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BullDna</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../styles/swiper.min.css"/>
+    <link rel="stylesheet" href="../styles/choices.min.css"/>
+    <link rel="stylesheet" href="../styles/main.css"/>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../script/jquery.jscrollpane.js"></script>
+    <script src="../script/jquery.mousewheel.js"></script>
+    <script src="../script/dropzone.js"></script>
+    <script src="../script/jquery.dotdotdot.js"></script>
+    <script src="../script/swiper.min.js"></script>
+    <script src="../script/choices.min.js"></script>
+    <script src="../script/main.js"></script>
+  </head>
+  <body>
+    <header class="js_header">
+      <div class="header">
+        <div class="menu_mobile__button js_menu_active">
+          <div class="icon burger"></div>
+        </div>
+        <div class="menu_mobile js_menu__lists">
+          <div class="menu_mobile__buttons">
+            <div class="button sign-in_mobile js_sign-in"><a class="content">Sign In</a></div><a class="button sign-up_mobile">Sign Up</a>
+          </div>
+          <div class="user__block"><a class="link account" href=""> 
+              <svg class="icon"> 
+                <use xlink:href="../img/symbol_sprite.svg#icon-user"></use>
+              </svg>
+              <p class="text">My account</p></a>
+            <div class="tariff">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-star"></use>
+              </svg>
+              <div class="info">
+                <p class="plan">3 month</p>
+                <p class="days-remain">21 of 90 days remaining</p><a class="button update"> 
+                  <div class="text">Update plan</div></a>
+              </div>
+            </div><a class="link edit" href="">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-pencil"></use>
+              </svg>
+              <p class="text">Edit account</p></a><a class="link out" href="">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-exit"></use>
+              </svg>
+              <p class="text">Sign out</p></a>
+          </div>
+          <ul class="menu_mobile__list">
+            <li class="item js_menu__list Services">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Services</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Calculator</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Find a puppy</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Stud service</a></li>
+              </ul>
+            </li>
+            <li class="item js_menu__list Product">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Product</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">How It Works</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Pricing</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="item js_menu__list Company">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Company</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">About</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Blog</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Contact us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><a class="logotype" href="main.html">
+          <svg viewBox="0 0 141 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M78.44 0.939999C80.66 0.939999 82.6 1.38 84.26 2.26C85.92 3.14 87.2 4.38 88.1 5.98C89.02 7.56 89.48 9.39 89.48 11.47C89.48 13.53 89.02 15.36 88.1 16.96C87.2 18.56 85.91 19.8 84.23 20.68C82.57 21.56 80.64 22 78.44 22L70 22V0.999996L78.44 0.939999ZM78 18C79.94 18 81.56 17.08 82.64 16C83.72 14.92 84.26 13.41 84.26 11.47C84.26 9.53 83.72 8.02 82.64 6.94C81.56 5.86 79.94 5 78 5H75V18H78Z" fill="#804D6F"></path>
+            <path d="M114 22L109 22L100 9V22H95V1H100L109.057 13.99L109 1H114V22Z" fill="#804D6F"></path>
+            <path d="M134 18H126L124.5 22L119 22L127 1H133L141 22L135.5 22L134 18ZM133 14L130 6.5L127 14H133Z" fill="#804D6F"></path>
+            <path d="M12.61 11.2C13.83 11.46 14.81 12.07 15.55 13.03C16.29 13.97 16.5 15.28 16.5 16.5C16.5 18.26 16.04 19.43 14.8 20.47C13.58 21.49 11.87 22 9.66999 22L0 22V0.940002H9.33999C11.48 0.940002 13.15 1.43 14.35 2.41C15.57 3.39 16 4.82 16 6.5C16 7.74 15.85 8.67 15.19 9.49C14.55 10.31 13.69 10.88 12.61 11.2ZM4.98999 9.49H8.34999C9.18999 9.49 9.82999 9.3 10.27 8.92C10.73 8.54 10.96 7.99 10.96 7.27C10.96 6.53 10.73 5.97 10.27 5.59C9.82999 5.19 9.18999 4.99 8.34999 4.99H4.98999V9.49ZM9 18C9.86 18 10.29 17.72 10.75 17.32C11.23 16.92 11.47 16.34 11.47 15.58C11.47 14.84 11.22 14.26 10.72 13.84C10.24 13.4 9.36 13 8.5 13H4.98999L5 18H9Z" fill="black"></path>
+            <path d="M39 5V22H34.0354V19.72C33.5154 20.46 32.8054 21.06 31.9054 21.52C31.0254 21.96 30.08 22 29 22C27.72 22 26.5554 21.9 25.5754 21.34C24.5954 20.76 24.04 20.08 23.5 19C22.96 17.92 23 16.46 23 15V5H28V14.35C28 15.47 27.8754 16.34 28.4554 16.96C29.0354 17.58 29.52 18 30.5 18C31.5 18 32.5854 17.58 33.1654 16.96C33.7454 16.34 34.0354 15.47 34.0354 14.35V5H39Z" fill="black"></path>
+            <path d="M58 1H63V22H58V1Z" fill="black"></path>
+            <path d="M46 1H51V22H46V1Z" fill="black"></path>
+          </svg></a>
+        <div class="menu__list">
+          <ul class="menu__list_items">
+            <li class="menu__list_item js_list__item Calculator"><a>Calculator</a></li>
+            <li class="menu__list_item js_list__item "><a>Find a puppy</a></li>
+            <li class="menu__list_item js_list__item "><a>Stud service</a></li>
+            <li class="menu__list_item js_list__item "><a>Pricing</a></li>
+            <li class="menu__list_item js_list__item "><a>FAQ</a></li>
+            <li class="menu__list_item js_list__item "><a>Contact us</a></li>
+          </ul>
+        </div>
+        <div class="currency js_currency"><span class="currency_active js_currency_active">$ USD</span>
+          <ul class="currency__list js_currency__list">
+            <li class="item js_currency_item active">$  USD</li>
+            <li class="item js_currency_item ">€  EUR</li>
+            <li class="item js_currency_item ">$  AUD</li>
+            <li class="item js_currency_item ">$  CAD</li>
+            <li class="item js_currency_item ">£  GBP</li>
+            <li class="item js_currency_item ">¥  YEN</li>
+          </ul>
+        </div>
+        <div class="sign_button js_sign-in">Sign in</div>
+        <!-- Если у пользователя есть аватарка вставлять ее-->
+        <div class="user plan_v2" style="background-image: url(../../img/boy.svg)">
+          <div class="user__popup">
+            <div class="user__popup__block"><a class="link account" href=""> 
+                <svg class="icon"> 
+                  <use xlink:href="../img/symbol_sprite.svg#icon-user"></use>
+                </svg>
+                <p class="text">My account</p></a>
+              <div class="tariff">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-star"></use>
+                </svg>
+                <div class="info">
+                  <p class="plan">3 month</p>
+                  <p class="days-remain">21 of 90 days remaining</p>
+                </div><a class="button update"> 
+                  <div class="text">Update plan</div></a>
+              </div><a class="link edit" href="">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-pencil"></use>
+                </svg>
+                <p class="text">Edit account</p></a><a class="link out" href="">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-exit"></use>
+                </svg>
+                <p class="text">Sign out</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header_background"></div>
+    </header>
+    <div class="main-container">
+      <div class="crumbs">
+        <ul class="crumbs-list">
+          <li class="item"><a href="main.html">Home</a></li>
+          <li class="item"><a href="">Calculator</a></li>
+          <li class="item"><a href="">Forecast the offspring of my dogs</a></li>
+        </ul>
+      </div>
+      <div class="calculator-wrapper">
+        <h1 class="title">Color DNA Calculator</h1>
+        <div class="calculator__steps-wrapper">
+          <div class="calculator__steps">
+            <div class="calculator__steps__item">
+              <h2 class="title">Forecast the offspring of <br> my dogs</h2>
+              <div class="calculator__steps__item-number">1</div>
+            </div>
+            <div class="calculator__steps__item active">
+              <h2 class="title">Forecast the offspring <br> by genodate</h2>
+              <div class="calculator__steps__item-number">2</div>
+            </div>
+            <div class="calculator__steps__item">
+              <h2 class="title">Search for a male for offspring of a certain color</h2>
+              <div class="calculator__steps__item-number">3</div>
+            </div>
+            <div class="calculator__steps__item">
+              <h2 class="title">Search for a male for the offspring of a particular genome</h2>
+              <div class="calculator__steps__item-number">4</div>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-genodate calculator">
+          <div class="calculator__instruction-block js_instruction-block">
+            <h3 class="calculator__instruction-block__title js_instruction-title">How It Works</h3>
+            <div class="calculator__instruction-block__instruction js_instruction">
+              <p class="instruction-text">This case is calculating the highest possibilities of dogs located around the breeder to get highest chance to produce the puppy with the required genetic code.</p>
+              <div class="instruction-quote"> 
+                <p class="quote__text">EXAMPLE: I want to buy a lilac tan puppy with cream (DNA: bb dd atat Ee kyky NN) ; Where is the nearest male and female from me with the highest chance that will produce this puppy for me that I can contact the breeder in advance?</p>
+              </div>
+              <h4 class="instruction-title">Instruction</h4>
+              <ul class="instruction__list">
+                <li class="instruction__list__item">
+                  <p class="instruction__list__item-number">1</p>
+                  <p class="instruction__list__item-text">Добавьте собак в свой аккаунт</p>
+                </li>
+                <li class="instruction__list__item">
+                  <p class="instruction__list__item-number">2</p>
+                  <p class="instruction__list__item-text">Выберите в списке "Мои собаки" и "Избранные собаки" кобелей и сук, которых хотите проверить/сравнить. Кликните по темной карточке для выбора. <br> Чтобы исключить из расчета выбранную собаку кликните на нее еще раз, карточка станет темной. </p>
+                </li>
+                <li class="instruction__list__item">
+                  <p class="instruction__list__item-number">3</p>
+                  <p class="instruction__list__item-text">Нажмите кнопку "Расчитать прогноз потомства"</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="calculator__gender-blocks">
+            <div class="calculator__gender-blocks__item">
+              <div class="add-dog__description__genom-block male">
+                <h1 class="genom-block__title">DNA</h1>
+                <div class="genom-block__table">
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="AtLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtLeftMale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="AyLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyLeftMale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="aLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aLeftMale">a</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Agouti</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="AtRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtRightMale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="AyRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyRightMale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="aRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aRightMale">a</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftMale" id="BLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BLeftMale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftMale" id="bLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bLeftMale">b</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Brown</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightMale" id="BRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BRightMale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightMale" id="bRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bRightMale">b</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftMale" id="DLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DLeftMale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftMale" id="dLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dLeftMale">d</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Dilute</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightMale" id="DRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DRightMale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightMale" id="dRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dRightMale">d</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftMale" id="KbrLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrLeftMale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftMale" id="KyLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyLeftMale">Ky</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Dominant black</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightMale" id="KbrRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrRightMale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightMale" id="KyRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyRightMale">Ky</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="ELeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ELeftMale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="eLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eLeftMale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="EmLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmLeftMale">Em</label>
+                    </div>
+                    <div class="genom-block__table__cell title">MCR1</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="ERightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ERightMale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="eRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eRightMale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="EmRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmRightMale">Em</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftMale" id="NLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NLeftMale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftMale" id="SLeftMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SLeftMale">S</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Pied</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightMale" id="NRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NRightMale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightMale" id="SRightMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SRightMale">S</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="genom-block__table_mobile">
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Agouti</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="AtLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtLeftMobileMale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="AyLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyLeftMobileMale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftMale" id="aLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aLeftMobileMale">a</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="AtRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtRightMobileMale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="AyRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyRightMobileMale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightMale" id="aRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aRightMobileMale">a</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Brown</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftMale" id="BLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BLeftMobileMale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftMale" id="bLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bLeftMobileMale">b</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightMale" id="BRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BRightMobileMale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightMale" id="bRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bRightMobileMale">b</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Dilute</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftMale" id="DLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DLeftMobileMale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftMale" id="dLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dLeftMobileMale">d</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightMale" id="DRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DRightMobileMale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightMale" id="dRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dRightMobileMale">d</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Dominant black</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftMale" id="KbrLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrLeftMobileMale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftMale" id="KyLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyLeftMobileMale">Ky</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightMale" id="KbrRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrRightMobileMale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightMale" id="KyRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyRightMobileMale">Ky</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">MCR1</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="ELeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ELeftMobileMale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="eLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eLeftMobileMale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftMale" id="EmLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmLeftMobileMale">Em</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="ERightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ERightMobileMale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="eRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eRightMobileMale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightMale" id="EmRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmRightMobileMale">Em</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Pied</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftMale" id="NLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NLeftMobileMale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftMale" id="SLeftMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SLeftMobileMale">S</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightMale" id="NRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NRightMobileMale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightMale" id="SRightMobileMale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SRightMobileMale">S</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculator__gender-blocks__item">
+              <div class="add-dog__description__genom-block female">
+                <h1 class="genom-block__title">DNA</h1>
+                <div class="genom-block__table">
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="AtLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtLeftFemale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="AyLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyLeftFemale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="aLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aLeftFemale">a</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Agouti</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="AtRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtRightFemale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="AyRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyRightFemale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="aRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aRightFemale">a</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftFemale" id="BLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BLeftFemale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftFemale" id="bLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bLeftFemale">b</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Brown</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightFemale" id="BRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BRightFemale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightFemale" id="bRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bRightFemale">b</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftFemale" id="DLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DLeftFemale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftFemale" id="dLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dLeftFemale">d</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Dilute</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightFemale" id="DRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DRightFemale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightFemale" id="dRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dRightFemale">d</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftFemale" id="KbrLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrLeftFemale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftFemale" id="KyLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyLeftFemale">Ky</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Dominant black</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightFemale" id="KbrRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrRightFemale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightFemale" id="KyRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyRightFemale">Ky</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="ELeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ELeftFemale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="eLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eLeftFemale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="EmLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmLeftFemale">Em</label>
+                    </div>
+                    <div class="genom-block__table__cell title">MCR1</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="ERightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ERightFemale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="eRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eRightFemale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="EmRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmRightFemale">Em</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftFemale" id="NLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NLeftFemale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftFemale" id="SLeftFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SLeftFemale">S</label>
+                    </div>
+                    <div class="genom-block__table__cell title">Pied</div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightFemale" id="NRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NRightFemale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightFemale" id="SRightFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SRightFemale">S</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="genom-block__table_mobile">
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Agouti</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="AtLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtLeftMobileFemale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="AyLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyLeftMobileFemale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiLeftFemale" id="aLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aLeftMobileFemale">a</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="AtRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AtRightMobileFemale">At</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="AyRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="AyRightMobileFemale">Ay</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="AgoutiRightFemale" id="aRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="aRightMobileFemale">a</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Brown</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftFemale" id="BLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BLeftMobileFemale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownLeftFemale" id="bLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bLeftMobileFemale">b</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightFemale" id="BRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="BRightMobileFemale">B</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="BrownRightFemale" id="bRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="bRightMobileFemale">b</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Dilute</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftFemale" id="DLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DLeftMobileFemale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteLeftFemale" id="dLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dLeftMobileFemale">d</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightFemale" id="DRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="DRightMobileFemale">D</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="DiluteRightFemale" id="dRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="dRightMobileFemale">d</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Dominant black</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftFemale" id="KbrLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrLeftMobileFemale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackLeftFemale" id="KyLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyLeftMobileFemale">Ky</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightFemale" id="KbrRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KbrRightMobileFemale">Kbr</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="Dominant blackRightFemale" id="KyRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="KyRightMobileFemale">Ky</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">MCR1</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="ELeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ELeftMobileFemale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="eLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eLeftMobileFemale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1LeftFemale" id="EmLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmLeftMobileFemale">Em</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="ERightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="ERightMobileFemale">E</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="eRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="eRightMobileFemale">e</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="MCR1RightFemale" id="EmRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="EmRightMobileFemale">Em</label>
+                    </div>
+                  </div>
+                  <div class="genom-block__table__row-title">
+                    <div class="genom-block__table__cell title">Pied</div>
+                  </div>
+                  <div class="genom-block__table__row">
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftFemale" id="NLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NLeftMobileFemale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedLeftFemale" id="SLeftMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SLeftMobileFemale">S</label>
+                    </div>
+                    <div class="genom-block__table__cell title"></div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightFemale" id="NRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="NRightMobileFemale">N</label>
+                    </div>
+                    <div class="genom-block__table__cell">
+                      <input class="genom-block__table__checkbox" type="radio" name="PiedRightFemale" id="SRightMobileFemale"/>
+                      <label class="genom-block__table__checkbox-label genom" for="SRightMobileFemale">S</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><a class="button calculator__calculate-button">Forecast offspring of my dogs</a>
+        </div>
+        <div class="calculator__result-dogs">
+          <h1 class="calculator__result-dogs__title">Offspring of my dogs</h1>
+          <div class="calculator__result-dogs__header-wrap">
+            <div class="calculator__result-dogs__header-wrap__content">
+              <p class="calculator__result-dogs__header-wrap__content-cell">Male</p>
+              <p class="calculator__result-dogs__header-wrap__content-cell">Female</p>
+              <p class="calculator__result-dogs__header-wrap__content-cell">Вероятность окраса, %</p>
+            </div>
+          </div>
+          <div class="calculator__result-dogs__body">
+            <div class="calculator__result-dogs__body__wrap">
+              <div class="calculator__result-dogs__body__row">
+                <div class="calculator__result-dogs__body__cell">
+                  <div class="calculator__result-dogs__body__cell__dog-block">
+                    <div class="calculator__result-dogs__body__cell__dog-block__image" style="background: linear-gradient(0deg, #DAE6F2, #DAE6F2), #C2DAF2;">
+                      <svg class="calculator__result-dogs__body__cell__dog-block__image-icon">
+                        <use xlink:href="../img/symbol_sprite.svg#icon-male"></use>
+                      </svg>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__dog-block__body">
+                      <div class="calculator__result-dogs__body__cell__dog-block__genom-wrapper">
+                        <p class="calculator__result-dogs__body__cell__dog-block__genom-wrapper__gens">AtAy b Dd KbrKy eEm N</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="calculator__result-dogs__body__cell">
+                  <div class="calculator__result-dogs__body__cell__dog-block">
+                    <div class="calculator__result-dogs__body__cell__dog-block__image" style="background: linear-gradient(0deg, #F2DAE2, #F2DAE2), #F2C2D2;">
+                      <svg class="calculator__result-dogs__body__cell__dog-block__image-icon">
+                        <use xlink:href="../img/symbol_sprite.svg#icon-female"></use>
+                      </svg>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__dog-block__body">
+                      <div class="calculator__result-dogs__body__cell__dog-block__genom-wrapper">
+                        <p class="calculator__result-dogs__body__cell__dog-block__genom-wrapper__gens">AtAy b Dd KbrKy eEm N</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="calculator__result-dogs__body__cell">
+                  <div class="calculator__result-dogs__body__cell__colors-table">
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                    <div class="calculator__result-dogs__body__cell__colors-table__row">
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell">chocolate trindle pied</p>
+                      <p class="calculator__result-dogs__body__cell__colors-table__cell-value">15.63</p>
+                      <div class="calculator__result-dogs__body__cell__colors-table__cell__popup-image" style="background-image:url(../img/puppy2.png)"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculator-wrapper_mobile">
+        <h1 class="title">Color DNA Calculator</h1>
+        <div class="calculator__stub">
+          <svg class="calculator__stub__warning-icon">
+            <use xlink:href="../img/symbol_sprite_default.svg#icon-warning"></use>
+          </svg>
+          <p class="calculator__stub__text">To use a Calculator, enlarge your browser window, or switch to a computer with a larger screen resolution</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <ul class="footer__list">
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Services</li>
+              <li class="items__list_item"><a href="#">Calculator</a></li>
+              <li class="items__list_item"><a href="#">Find a Puppy</a></li>
+              <li class="items__list_item"><a href="#">Stud Service</a></li>
+            </ul>
+          </li>
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Product</li>
+              <li class="items__list_item"><a href="#">How It Works</a></li>
+              <li class="items__list_item"><a href="#">Pricing</a></li>
+              <li class="items__list_item"><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Company</li>
+              <li class="items__list_item"><a href="#">About</a></li>
+              <li class="items__list_item"><a href="#">Blog</a></li>
+              <li class="items__list_item"><a href="#">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="subscribe js_subscribe-block">
+          <h4 class="subscribe__tittle">BullDNA Newsletter</h4>
+          <form class="wrapper js_wrapper js_subscribe-form">
+            <p class="subscribe__text">Subscribe to our newsletter and receive the latest news and insights about website development</p>
+            <div class="subscribe__input-block js_input-block input-block" error-msg="Enter valid E-mail">
+              <input class="input js_input" type="text" placeholder="Enter your e-mail address"/><a class="subscribe__button js_subscribe">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-arrow-right"></use>
+                </svg></a>
+            </div>
+          </form>
+          <div class="success js_active">
+            <p class="text">Subscribe to our newsletter and receive the latest news and insights about website development</p>
+            <p class="text">A confirmation e-mail has been sent to the e-mail address you provided <span class='mail js_mail'></span>. Click the link in the e-mail to confirm and activate the subscription.</p>
+          </div>
+        </div>
+        <div class="copyright"><span class="site_name">© 2018 BullDNA</span><a class="copyright__link" href="#">Terms of Use</a><a class="copyright__link" href="#">Privacy</a><a class="copyright__link email" href="#">info@spolbo.com</a><a class="copyright__link fb">
+            <svg class="fb_logo">
+              <use xlink:href="../img/symbol_sprite.svg#icon-facebook-logo"></use>
+            </svg></a>
+          <div class="copyright__developed"><a href="/" target="_blank"><span class="dark">Developed by</span> DFedyunin</a></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

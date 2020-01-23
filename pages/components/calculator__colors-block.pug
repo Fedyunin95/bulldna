@@ -1,0 +1,63 @@
+article.calculator__color-blocks
+	h3.calculator__color-blocks__title Colors
+	.calculator__color-blocks__wrap
+		- 
+			var colors = [
+				{id: "merle", value:"#E5E5E5", name: "merle", class:""},
+				{id: "cream", value:"#E5DACE", name: "cream", class:""},
+				{id: "fawn", value:"#E5B88A", name: "fawn", class:""},
+				{id: "bluefawnpied", value:"#E5B88A", name: "blue fawn pied", class:""},
+				{id: "lilac", value:"#C5C2CC", name: "lilac", class:""},
+				{id: "lilac", value:"#C5C2CC", name: "lilac cream", class:""},
+				{id: "lilac", value:"#C5C2CC", name: "lilac fawn", class:""},
+				{id: "lilacfawnpied", value:"#C5C2CC", name: "lilac fawn pied", class:""},
+				{id: "lilacpied", value:"#C5C2CC", name: "lilac pied", class:""},
+				{id: "lilactan", value:"#C5C2CC", name: "lilac tan", class:""},
+				{id: "lilactantancream", value:"#C5C2CC", name: "lilac tan cream", class:""},
+				{id: "lilactantanpied", value:"#C5C2CC", name: "lilac tan pied", class:""},
+				{id: "lilactrindle", value:"#C5C2CC", name: "lilac trindle", class:""},
+				{id: "lilactrindlepied", value:"#C5C2CC", name: "lilac trindle pied", class:""},
+				{id: "solidlilac", value:"#C5C2CC", name: "solid lilac", class:""},
+				{id: "blue", value:"#7A8599", name: "blue", class:"dark"},
+				{id: "bluecream", value:"#7A8599", name: "blue cream", class:"dark"},
+				{id: "bluefawn", value:"#7A8599", name: "blue fawn", class:"dark"},
+				{id: "bluefawnpied", value:"#7A8599", name: "blue fawn pied", class:"dark"},
+				{id: "bluemelre", value:"#7A8599", name: "blue melre", class:"dark"},
+				{id: "bluepied", value:"#7A8599", name: "blue pied", class:"dark"},
+				{id: "bluepiedsolid", value:"#7A8599", name: "blue pied solid", class:"dark"},
+				{id: "bluetan", value:"#7A8599", name: "blue tan", class:"dark"},
+				{id: "bluetanpied", value:"#7A8599", name: "blue tan pied", class:"dark"},
+				{id: "bluetrindle", value:"#7A8599", name: "blue trindle", class:"dark"},
+				{id: "bluetrindlepied", value:"#7A8599", name: "blue trindle pied", class:"dark"},
+				{id: "solidblue", value:"#7A8599", name: "solid blue", class:"dark"},
+				{id: "brindle", value:"#665F5C", name: "brindle", class:"dark"},
+				{id: "brindlepied", value:"#665F5C", name: "brindle pied", class:"dark"},
+				{id: "chocolate", value:"#4D3D36", name: "chocolate", class:"dark"},
+				{id: "chocolatecream", value:"#4D3D36", name: "chocolate cream", class:"dark"},
+				{id: "chocolatefawn", value:"#4D3D36", name: "chocolate fawn", class:"dark"},
+				{id: "chocolatefawnpied", value:"#4D3D36", name: "chocolate fawn pied", class:"dark"},
+				{id: "chocolatemerle", value:"#4D3D36", name: "chocolate merle", class:"dark"},
+				{id: "chocolatepied", value:"#4D3D36", name: "chocolate pied", class:"dark"},
+				{id: "chocolatepiedsolid", value:"#4D3D36", name: "chocolate pied solid", class:"dark"},
+				{id: "chocolatetan", value:"#4D3D36", name: "chocolate tan", class:"dark"},
+				{id: "chocolatetanpied", value:"#4D3D36", name: "chocolate tan pied", class:"dark"},
+				{id: "chocolatetrindle", value:"#4D3D36", name: "chocolate trindle", class:"dark"},
+				{id: "chocolatetrindlepied", value:"#4D3D36", name: "chocolate trindle pied", class:"dark"},
+				{id: "solidchocolate", value:"#4D3D36", name: "solid chocolate", class:"dark"},
+				{id: "blackchocolate", value:"#333333", name: "black tan", class:"dark"},
+				{id: "blackchocolatepied", value:"#333333", name: "black tan pied", class:"dark"},
+				{id: "blackchocolate", value:"#333333", name: "black trindle", class:"dark"},
+				{id: "blackchocolatepied", value:"#333333", name: "black trindle pied", class:"dark"},
+				{id: "solidchocolate", value:"#333333", name: "solid black", class:"dark"},
+			]
+		each color in colors
+			div(style="background:" + color.value, class="calculator__color-blocks__checkbox-block " + color.class)
+				input.calculator__color-blocks__checkbox-block__input(id= color.id, type="checkbox" value="id")
+				label.calculator__color-blocks__checkbox-block__text(for= color.id)= color.name
+	.calculator__color-blocks__choose-colors
+		.calculator__color-blocks__choose-colors__item-wrap
+			p.calculator__color-blocks__choose-colors__item.calculator__color-blocks__choose-colors__color_first Drag and drop <span class="dark"> color 1 </span> here
+		.calculator__color-blocks__choose-colors__item-wrap
+			p.calculator__color-blocks__choose-colors__item.calculator__color-blocks__choose-colors__color_second Drag and drop <span class="dark"> color 2 </span> here
+		.calculator__color-blocks__choose-colors__item-wrap
+			p.calculator__color-blocks__choose-colors__item.calculator__color-blocks__choose-colors__color_third Drag and drop <span class="dark"> color 3 </span> here

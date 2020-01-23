@@ -1,0 +1,12 @@
+div(class='input-block ' + block.class error-msg= block.error_msg)
+			input(
+				class= block.input_class
+				type= block.type
+				placeholder= block.placeholder
+				name= block.name
+				required= block.required
+				minLength = block.minLength
+			)
+			if block.img
+				svg.icon.js_show-pass
+					use(xlink:href= block.img)

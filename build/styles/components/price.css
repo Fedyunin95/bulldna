@@ -1,0 +1,24 @@
+.price {
+  padding: 0 10px;
+  margin: 80px 0 120px; }
+  .price__wrap {
+    max-width: 1160px;
+    margin: 0 auto; }
+  .price__title {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'montserratbold';
+    height: 50px;
+    margin-bottom: 90px; }
+  .price__plans {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .price__plans-item {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      max-height: 680px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByaWNlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUIsRUFBRTtFQUN2QjtJQUNFLGtCQUFrQjtJQUNsQixlQUFlLEVBQUU7RUFDbkI7SUFDRSxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLDhCQUE4QjtJQUM5QixhQUFhO0lBQ2Isb0JBQW9CLEVBQUU7RUFDeEI7SUFDRSxZQUFZO0lBQ1oscUJBQWM7SUFBZCxxQkFBYztJQUFkLGNBQWMsRUFBRTtJQUNoQjtNQUNFLFlBQVk7TUFDWixpQkFBaUI7TUFDakIsYUFBYTtNQUNiLGtCQUFrQixFQUFFIiwiZmlsZSI6ImNvbXBvbmVudHMvcHJpY2UuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByaWNlIHtcbiAgcGFkZGluZzogMCAxMHB4O1xuICBtYXJnaW46IDgwcHggMCAxMjBweDsgfVxuICAucHJpY2VfX3dyYXAge1xuICAgIG1heC13aWR0aDogMTE2MHB4O1xuICAgIG1hcmdpbjogMCBhdXRvOyB9XG4gIC5wcmljZV9fdGl0bGUge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBmb250LXNpemU6IDQwcHg7XG4gICAgZm9udC1mYW1pbHk6ICdtb250c2VycmF0Ym9sZCc7XG4gICAgaGVpZ2h0OiA1MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDkwcHg7IH1cbiAgLnByaWNlX19wbGFucyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogZmxleDsgfVxuICAgIC5wcmljZV9fcGxhbnMtaXRlbSB7XG4gICAgICB3aWR0aDogMTAwJTtcbiAgICAgIG1heC13aWR0aDogMzYwcHg7XG4gICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICBtYXgtaGVpZ2h0OiA2ODBweDsgfVxuIl19 */

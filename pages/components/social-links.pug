@@ -1,0 +1,9 @@
+.social-block
+	p.tittle sign in with your social network
+	.social-block__links
+		-var links = [{name:'goggle', path:'#', class:'google'},{name:'facebook', path:'#', class:'fb'},{name:'VK', path:'#', class:'vk'},{name:'twitter', path:'#', class:'twitter'}]
+		each link in links
+			a(
+				href= link.path
+				class="link "+ link.class 
+			)= link.name

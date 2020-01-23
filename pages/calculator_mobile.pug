@@ -1,0 +1,16 @@
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in 
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Calculator', link:''}]
+			include components/crumbs.pug
+			section.calculator-wrapper
+				h1.title Color DNA Calculator
+				section.calculator__stub
+					svg.calculator__stub__warning-icon
+						use(xlink:href="../img/symbol_sprite_default.svg#icon-warning")
+					p.calculator__stub__text To use a Calculator, enlarge your browser window, or switch to a computer with a larger screen resolution
+		footer
+			include components/footer.pug

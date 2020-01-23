@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BullDna</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../styles/swiper.min.css"/>
+    <link rel="stylesheet" href="../styles/choices.min.css"/>
+    <link rel="stylesheet" href="../styles/main.css"/>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../script/jquery.jscrollpane.js"></script>
+    <script src="../script/jquery.mousewheel.js"></script>
+    <script src="../script/dropzone.js"></script>
+    <script src="../script/jquery.dotdotdot.js"></script>
+    <script src="../script/swiper.min.js"></script>
+    <script src="../script/choices.min.js"></script>
+    <script src="../script/main.js"></script>
+  </head>
+  <body>
+    <header class="js_header">
+      <div class="header">
+        <div class="menu_mobile__button js_menu_active">
+          <div class="icon burger"></div>
+        </div>
+        <div class="menu_mobile js_menu__lists">
+          <div class="menu_mobile__buttons">
+            <div class="button sign-in_mobile js_sign-in"><a class="content">Sign In</a></div><a class="button sign-up_mobile">Sign Up</a>
+          </div>
+          <div class="user__block"><a class="link account" href=""> 
+              <svg class="icon"> 
+                <use xlink:href="../img/symbol_sprite.svg#icon-user"></use>
+              </svg>
+              <p class="text">My account</p></a>
+            <div class="tariff">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-star"></use>
+              </svg>
+              <div class="info">
+                <p class="plan">3 month</p>
+                <p class="days-remain">21 of 90 days remaining</p><a class="button update"> 
+                  <div class="text">Update plan</div></a>
+              </div>
+            </div><a class="link edit" href="">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-pencil"></use>
+              </svg>
+              <p class="text">Edit account</p></a><a class="link out" href="">
+              <svg class="icon">
+                <use xlink:href="../img/symbol_sprite.svg#icon-exit"></use>
+              </svg>
+              <p class="text">Sign out</p></a>
+          </div>
+          <ul class="menu_mobile__list">
+            <li class="item js_menu__list Services">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Services</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Calculator</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Find a puppy</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Stud service</a></li>
+              </ul>
+            </li>
+            <li class="item js_menu__list Product">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Product</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">How It Works</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Pricing</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="item js_menu__list Company">
+              <div class="item__icon js_list__item_tittle js_list__item_icon"></div>
+              <div class="item__tittle js_list__item_tittle">Company</div>
+              <ul class="item__menu js_dropdown_menu">
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">About</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Blog</a></li>
+                <li class="item__menu__item"><a class="dropdown__menu_item_link">Contact us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><a class="logotype" href="main.html">
+          <svg viewBox="0 0 141 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M78.44 0.939999C80.66 0.939999 82.6 1.38 84.26 2.26C85.92 3.14 87.2 4.38 88.1 5.98C89.02 7.56 89.48 9.39 89.48 11.47C89.48 13.53 89.02 15.36 88.1 16.96C87.2 18.56 85.91 19.8 84.23 20.68C82.57 21.56 80.64 22 78.44 22L70 22V0.999996L78.44 0.939999ZM78 18C79.94 18 81.56 17.08 82.64 16C83.72 14.92 84.26 13.41 84.26 11.47C84.26 9.53 83.72 8.02 82.64 6.94C81.56 5.86 79.94 5 78 5H75V18H78Z" fill="#804D6F"></path>
+            <path d="M114 22L109 22L100 9V22H95V1H100L109.057 13.99L109 1H114V22Z" fill="#804D6F"></path>
+            <path d="M134 18H126L124.5 22L119 22L127 1H133L141 22L135.5 22L134 18ZM133 14L130 6.5L127 14H133Z" fill="#804D6F"></path>
+            <path d="M12.61 11.2C13.83 11.46 14.81 12.07 15.55 13.03C16.29 13.97 16.5 15.28 16.5 16.5C16.5 18.26 16.04 19.43 14.8 20.47C13.58 21.49 11.87 22 9.66999 22L0 22V0.940002H9.33999C11.48 0.940002 13.15 1.43 14.35 2.41C15.57 3.39 16 4.82 16 6.5C16 7.74 15.85 8.67 15.19 9.49C14.55 10.31 13.69 10.88 12.61 11.2ZM4.98999 9.49H8.34999C9.18999 9.49 9.82999 9.3 10.27 8.92C10.73 8.54 10.96 7.99 10.96 7.27C10.96 6.53 10.73 5.97 10.27 5.59C9.82999 5.19 9.18999 4.99 8.34999 4.99H4.98999V9.49ZM9 18C9.86 18 10.29 17.72 10.75 17.32C11.23 16.92 11.47 16.34 11.47 15.58C11.47 14.84 11.22 14.26 10.72 13.84C10.24 13.4 9.36 13 8.5 13H4.98999L5 18H9Z" fill="black"></path>
+            <path d="M39 5V22H34.0354V19.72C33.5154 20.46 32.8054 21.06 31.9054 21.52C31.0254 21.96 30.08 22 29 22C27.72 22 26.5554 21.9 25.5754 21.34C24.5954 20.76 24.04 20.08 23.5 19C22.96 17.92 23 16.46 23 15V5H28V14.35C28 15.47 27.8754 16.34 28.4554 16.96C29.0354 17.58 29.52 18 30.5 18C31.5 18 32.5854 17.58 33.1654 16.96C33.7454 16.34 34.0354 15.47 34.0354 14.35V5H39Z" fill="black"></path>
+            <path d="M58 1H63V22H58V1Z" fill="black"></path>
+            <path d="M46 1H51V22H46V1Z" fill="black"></path>
+          </svg></a>
+        <div class="menu__list">
+          <ul class="menu__list_items">
+            <li class="menu__list_item js_list__item Calculator"><a>Calculator</a></li>
+            <li class="menu__list_item js_list__item "><a>Find a puppy</a></li>
+            <li class="menu__list_item js_list__item "><a>Stud service</a></li>
+            <li class="menu__list_item js_list__item "><a>Pricing</a></li>
+            <li class="menu__list_item js_list__item "><a>FAQ</a></li>
+            <li class="menu__list_item js_list__item "><a>Contact us</a></li>
+          </ul>
+        </div>
+        <div class="currency js_currency"><span class="currency_active js_currency_active">$ USD</span>
+          <ul class="currency__list js_currency__list">
+            <li class="item js_currency_item active">$  USD</li>
+            <li class="item js_currency_item ">€  EUR</li>
+            <li class="item js_currency_item ">$  AUD</li>
+            <li class="item js_currency_item ">$  CAD</li>
+            <li class="item js_currency_item ">£  GBP</li>
+            <li class="item js_currency_item ">¥  YEN</li>
+          </ul>
+        </div>
+        <div class="sign_button js_sign-in">Sign in</div>
+        <!-- Если у пользователя есть аватарка вставлять ее-->
+        <div class="user plan_v2" style="background-image: url(../../img/boy.svg)">
+          <div class="user__popup">
+            <div class="user__popup__block"><a class="link account" href=""> 
+                <svg class="icon"> 
+                  <use xlink:href="../img/symbol_sprite.svg#icon-user"></use>
+                </svg>
+                <p class="text">My account</p></a>
+              <div class="tariff">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-star"></use>
+                </svg>
+                <div class="info">
+                  <p class="plan">3 month</p>
+                  <p class="days-remain">21 of 90 days remaining</p>
+                </div><a class="button update"> 
+                  <div class="text">Update plan</div></a>
+              </div><a class="link edit" href="">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-pencil"></use>
+                </svg>
+                <p class="text">Edit account</p></a><a class="link out" href="">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-exit"></use>
+                </svg>
+                <p class="text">Sign out</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header_background"></div>
+    </header>
+    <div class="main-container">
+      <div class="crumbs">
+        <ul class="crumbs-list">
+          <li class="item"><a href="main.html">Home</a></li>
+          <li class="item"><a href="#">Create account</a></li>
+        </ul>
+      </div>
+      <div class="welcome">
+        <h1 class="tittle">Welcome to BullDNA!</h1>
+        <svg class="image">
+          <use xlink:href="../img/symbol_sprite_default.svg#icon-dogs"></use>
+        </svg>
+        <h2 class="subtitle">Hope, you will enjoy the service!</h2>
+        <p class="text">To confirm the registration, please follow the link we set to your e-mail.</p>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <ul class="footer__list">
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Services</li>
+              <li class="items__list_item"><a href="#">Calculator</a></li>
+              <li class="items__list_item"><a href="#">Find a Puppy</a></li>
+              <li class="items__list_item"><a href="#">Stud Service</a></li>
+            </ul>
+          </li>
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Product</li>
+              <li class="items__list_item"><a href="#">How It Works</a></li>
+              <li class="items__list_item"><a href="#">Pricing</a></li>
+              <li class="items__list_item"><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="footer__list__items">
+            <ul class="items__list">
+              <li class="tittle">Company</li>
+              <li class="items__list_item"><a href="#">About</a></li>
+              <li class="items__list_item"><a href="#">Blog</a></li>
+              <li class="items__list_item"><a href="#">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="subscribe js_subscribe-block">
+          <h4 class="subscribe__tittle">BullDNA Newsletter</h4>
+          <form class="wrapper js_wrapper js_subscribe-form">
+            <p class="subscribe__text">Subscribe to our newsletter and receive the latest news and insights about website development</p>
+            <div class="subscribe__input-block js_input-block input-block" error-msg="Enter valid E-mail">
+              <input class="input js_input" type="text" placeholder="Enter your e-mail address"/><a class="subscribe__button js_subscribe">
+                <svg class="icon">
+                  <use xlink:href="../img/symbol_sprite.svg#icon-arrow-right"></use>
+                </svg></a>
+            </div>
+          </form>
+          <div class="success js_active">
+            <p class="text">Subscribe to our newsletter and receive the latest news and insights about website development</p>
+            <p class="text">A confirmation e-mail has been sent to the e-mail address you provided <span class='mail js_mail'></span>. Click the link in the e-mail to confirm and activate the subscription.</p>
+          </div>
+        </div>
+        <div class="copyright"><span class="site_name">© 2018 BullDNA</span><a class="copyright__link" href="#">Terms of Use</a><a class="copyright__link" href="#">Privacy</a><a class="copyright__link email" href="#">info@spolbo.com</a><a class="copyright__link fb">
+            <svg class="fb_logo">
+              <use xlink:href="../img/symbol_sprite.svg#icon-facebook-logo"></use>
+            </svg></a>
+          <div class="copyright__developed"><a href="/" target="_blank"><span class="dark">Developed by</span> DFedyunin</a></div>
+        </div>
+      </div>
+    </footer>
+    <div class="popup js_popup js_login">
+      <form class="in js_in-form" action="/" novalidate="true">
+        <div class="close js_close"></div>
+        <h3 class="tittle">Sign In</h3>
+        <div class="social-block">
+          <p class="tittle">sign in with your social network</p>
+          <div class="social-block__links"><a class="link google" href="#">goggle</a><a class="link fb" href="#">facebook</a><a class="link vk" href="#">VK</a><a class="link twitter" href="#">twitter</a>
+          </div>
+        </div>
+        <p class="variant">or</p>
+        <div class="input-block " error-msg="wrong email address">
+          <input class="field" type="email" placeholder="Email" required="required"/>
+        </div>
+        <div class="input-block pass" error-msg="Wrong password">
+          <input class="field js_password" type="password" placeholder="Password" required="required"/>
+          <svg class="icon js_show-pass">
+            <use xlink:href="../img/symbol_sprite.svg#icon-eye_1"></use>
+          </svg>
+        </div>
+        <div class="checkbox-block js_box">
+          <div class="checkbox js_check"></div>
+          <input class="js_checkbox input-field" type="checkbox"/>
+          <p class="label js_check">Keep me signeed in</p>
+        </div><a class="forgot-pass js_reset-pass">Forgot password?</a>
+        <button class="button sign-in" type="submit">Sign In</button><a class="sign-up" href="signUp.html">Create an Account</a>
+      </form>
+    </div>
+    <div class="popup js_forgot js_popup">
+      <form class="forgot" action="">
+        <div class="close js_close"></div>
+        <h3 class="tittle">Forgot your password?</h3>
+        <p class="text">Don't worry! Enter the email address you registered with and we’ll send you a reset link</p>
+        <div class="input-block " error-msg="wrong email address">
+          <input class="field" type="text" placeholder="Email"/>
+        </div><a class="button reset">Reset Password</a><a class="sign-in js_sign-in">Sign In</a>
+      </form>
+      <div class="send forgot">
+        <div class="close js_close"></div>
+        <h3 class="tittle">Email send!</h3>
+        <p class="noty">An e-mail has been sent with further instructions</p><a class="button js-close">Reset Password</a>
+      </div>
+    </div>
+  </body>
+</html>

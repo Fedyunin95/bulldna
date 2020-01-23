@@ -1,0 +1,10 @@
+.dog-limit-form {
+  max-height: 500px; }
+  .dog-limit-form .tittle {
+    height: 40px;
+    margin-bottom: 0; }
+  .dog-limit-form .info {
+    height: auto;
+    margin-bottom: 60px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvZy1saW1pdC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0IsRUFBRTtFQUNwQjtJQUNFLGFBQWE7SUFDYixpQkFBaUIsRUFBRTtFQUNyQjtJQUNFLGFBQWE7SUFDYixvQkFBb0IsRUFBRSIsImZpbGUiOiJjb21wb25lbnRzL2RvZy1saW1pdC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZG9nLWxpbWl0LWZvcm0ge1xuICBtYXgtaGVpZ2h0OiA1MDBweDsgfVxuICAuZG9nLWxpbWl0LWZvcm0gLnRpdHRsZSB7XG4gICAgaGVpZ2h0OiA0MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDA7IH1cbiAgLmRvZy1saW1pdC1mb3JtIC5pbmZvIHtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgbWFyZ2luLWJvdHRvbTogNjBweDsgfVxuIl19 */

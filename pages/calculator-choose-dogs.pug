@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug
+	body
+		header.js_header
+			include components/header.pug
+		.main-container
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Calculator', link:''}, {name:'Forecast the offspring of my dogs', link:''}]
+			include components/crumbs.pug
+			section.calculator-wrapper
+				h1.title Color DNA Calculator
+				section.calculator__steps-wrapper
+					section.calculator__steps
+						.calculator__steps__item.active
+							h2.title Forecast the offspring of <br> my dogs
+							.calculator__steps__item-number 1
+						.calculator__steps__item
+							h2.title Forecast the offspring <br> by genodate
+							.calculator__steps__item-number 2
+						.calculator__steps__item
+							h2.title Search for a male for offspring of a certain color
+							.calculator__steps__item-number 3
+						.calculator__steps__item
+							h2.title Search for a male for the offspring of a particular genome
+							.calculator__steps__item-number 4
+				section.calculator
+					article.calculator__instruction-block.js_instruction-block
+						h3.calculator__instruction-block__title.js_instruction-title How It Works
+						article.calculator__instruction-block__instruction.js_instruction
+							p.instruction-text This case is calculating the highest possibilities of dogs located around the breeder to get highest chance to produce the puppy with the required genetic code.
+							.instruction-quote 
+								p.quote__text EXAMPLE: I want to buy a lilac tan puppy with cream (DNA: bb dd atat Ee kyky NN) ; Where is the nearest male and female from me with the highest chance that will produce this puppy for me that I can contact the breeder in advance?
+							h4.instruction-title Instruction
+							ul.instruction__list
+								li.instruction__list__item
+									p.instruction__list__item-number 1
+									p.instruction__list__item-text Добавьте собак в свой аккаунт
+								li.instruction__list__item
+									p.instruction__list__item-number 2
+									p.instruction__list__item-text Выберите в списке "Мои собаки" и "Избранные собаки" кобелей и сук, которых хотите проверить/сравнить. Кликните по темной карточке для выбора. <br> Чтобы исключить из расчета выбранную собаку кликните на нее еще раз, карточка станет темной. 
+								li.instruction__list__item
+									p.instruction__list__item-number 3
+									p.instruction__list__item-text Нажмите кнопку "Расчитать прогноз потомства"
+					article.calculator__my-dogs
+						.calculator__my-dogs__header 
+							h2.calculator__my-dogs__title My dogs
+							p.calculator__my-dogs__value (12)
+						.calculator__my-dogs__body
+							.calculator__dog-block
+								.calculator__dog-block__image(style="background-image: url(../img/puppy1.png)")
+								h5.calculator__dog-block__title Lily
+								.calculator__dog-block__info
+									svg.calculator__dog-block__info-gender.male
+										use(xlink:href="../img/symbol_sprite.svg#icon-male")
+									.calculator__dog-block__info-wrapper
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-breed French Bulldog
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-birthdate 2y 4m
+								.calculator__dog-block__genom-wrapper
+									p.calculator__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+							.calculator__dog-block
+								.calculator__dog-block__image(style="background-image: url(../img/puppy1.png)")
+								h5.calculator__dog-block__title Lily
+								.calculator__dog-block__info
+									svg.calculator__dog-block__info-gender.female
+										use(xlink:href="../img/symbol_sprite.svg#icon-female")
+									.calculator__dog-block__info-wrapper
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-breed French Bulldog
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-birthdate 2y 4m
+								.calculator__dog-block__genom-wrapper
+									p.calculator__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					article.calculator__favorite-dogs
+						.calculator__favorite-dogs__header 
+							h2.calculator__favorite-dogs__title Favorites dogs
+							p.calculator__favorite-dogs__value (28)
+						.calculator__favorite-dogs__body
+							.calculator__dog-block
+								svg.calculator__dog-block__like
+											use(xlink:href="../img/symbol_sprite.svg#icon-heart-background")
+								.calculator__dog-block__image(style="background-image: url(../img/puppy1.png)")
+								h5.calculator__dog-block__title Lily
+								.calculator__dog-block__info
+									svg.calculator__dog-block__info-gender.male
+										use(xlink:href="../img/symbol_sprite.svg#icon-male")
+									.calculator__dog-block__info-wrapper
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-breed French Bulldog
+										p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-birthdate 2y 4m
+								.calculator__dog-block__genom-wrapper
+									p.calculator__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+							.calculator__dog-block
+									svg.calculator__dog-block__like
+										use(xlink:href="../img/symbol_sprite.svg#icon-heart-background")
+									.calculator__dog-block__image(style="background-image: url(../img/puppy1.png)")
+									h5.calculator__dog-block__title Lily
+									.calculator__dog-block__info
+										svg.calculator__dog-block__info-gender.female
+											use(xlink:href="../img/symbol_sprite.svg#icon-female")
+										.calculator__dog-block__info-wrapper
+											p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-breed French Bulldog
+											p.calculator__dog-block__info-wrapper__text.calculator__dog-block__info-wrapper__text-birthdate 2y 4m
+									.calculator__dog-block__genom-wrapper
+										p.calculator__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+										.help.js_help
+											svg.icon
+												use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+											a.help__link.js_help-block(href="") 
+												p.text About genotype
+												svg.arrow
+													use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+					article.calculator__gender-blocks
+						.calculator__gender-blocks__item
+							.calculator__gender-blocks__item__header.male
+								svg.calculator__gender-blocks__item__icon
+									use(xlink:href="../img/symbol_sprite.svg#icon-male")
+								h4.calculator__gender-blocks__item__title Males
+							.calculator__gender-blocks__item__body
+								.calculator__gender-blocks__item__body__dog-block
+									.calculator__gender-blocks__item__body__image(style="background-image: url(../img/puppy1.png)")
+									.calculator__gender-blocks__item__body__dog-block__body
+										h5.calculator__gender-blocks__item__body__dog-block__title Lily
+										.calculator__gender-blocks__item__body__dog-block__info
+											.calculator__gender-blocks__item__body__dog-block__info-wrapper
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-breed French Bulldog
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-birthdate 2y 4m
+										.calculator__gender-blocks__item__body__dog-block__genom-wrapper
+											p.calculator__gender-blocks__item__body__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+											.help.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+												a.help__link.js_help-block(href="") 
+													p.text About genotype
+													svg.arrow
+														use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+										svg.calculator__gender-blocks__item__body__dog-block__info-gender.male
+												use(xlink:href="../img/symbol_sprite.svg#icon-male")
+								.calculator__gender-blocks__item__body__dog-block
+									.calculator__gender-blocks__item__body__image(style="background-image: url(../img/puppy1.png)")
+									.calculator__gender-blocks__item__body__dog-block__body
+										h5.calculator__gender-blocks__item__body__dog-block__title Lily
+										.calculator__gender-blocks__item__body__dog-block__info
+											.calculator__gender-blocks__item__body__dog-block__info-wrapper
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-breed French Bulldog
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-birthdate 2y 4m
+										.calculator__gender-blocks__item__body__dog-block__genom-wrapper
+											p.calculator__gender-blocks__item__body__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+											.help.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+												a.help__link.js_help-block(href="") 
+													p.text About genotype
+													svg.arrow
+														use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+										svg.calculator__gender-blocks__item__body__dog-block__info-gender.male
+												use(xlink:href="../img/symbol_sprite.svg#icon-male")
+						.calculator__gender-blocks__item
+							.calculator__gender-blocks__item__header.female
+								svg.calculator__gender-blocks__item__icon
+									use(xlink:href="../img/symbol_sprite.svg#icon-female")
+								h4.calculator__gender-blocks__item__title Females
+							.calculator__gender-blocks__item__body
+								.calculator__gender-blocks__item__body__dog-block
+									.calculator__gender-blocks__item__body__image(style="background-image: url(../img/puppy1.png)")
+									.calculator__gender-blocks__item__body__dog-block__body
+										h5.calculator__gender-blocks__item__body__dog-block__title Lily
+										.calculator__gender-blocks__item__body__dog-block__info
+											.calculator__gender-blocks__item__body__dog-block__info-wrapper
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-breed French Bulldog
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-birthdate 2y 4m
+										.calculator__gender-blocks__item__body__dog-block__genom-wrapper
+											p.calculator__gender-blocks__item__body__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+											.help.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+												a.help__link.js_help-block(href="") 
+													p.text About genotype
+													svg.arrow
+														use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+										svg.calculator__gender-blocks__item__body__dog-block__info-gender.female
+												use(xlink:href="../img/symbol_sprite.svg#icon-female")
+								.calculator__gender-blocks__item__body__dog-block
+									.calculator__gender-blocks__item__body__image(style="background-image: url(../img/puppy1.png)")
+									.calculator__gender-blocks__item__body__dog-block__body
+										h5.calculator__gender-blocks__item__body__dog-block__title Lily
+										.calculator__gender-blocks__item__body__dog-block__info
+											.calculator__gender-blocks__item__body__dog-block__info-wrapper
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-breed French Bulldog
+												p.calculator__gender-blocks__item__body__dog-block__info-wrapper__text.calculator__gender-blocks__item__body__dog-block__info-wrapper__text-birthdate 2y 4m
+										.calculator__gender-blocks__item__body__dog-block__genom-wrapper
+											p.calculator__gender-blocks__item__body__dog-block__genom-wrapper__gens AtAy b Dd KbrKy eEm NS
+											.help.js_help
+												svg.icon
+													use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+												a.help__link.js_help-block(href="") 
+													p.text About genotype
+													svg.arrow
+														use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+										svg.calculator__gender-blocks__item__body__dog-block__info-gender.female
+												use(xlink:href="../img/symbol_sprite.svg#icon-female")
+					a.button.calculator__calculate-button Forecast offspring of my dogs
+				include components/calculator__results.pug
+			.calculator-wrapper_mobile
+				h1.title Color DNA Calculator
+				.calculator__stub
+					svg.calculator__stub__warning-icon
+						use(xlink:href="../img/symbol_sprite_default.svg#icon-warning")
+					p.calculator__stub__text To use a Calculator, enlarge your browser window, or switch to a computer with a larger screen resolution
+		footer
+			include components/footer.pug

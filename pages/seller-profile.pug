@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug 
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'Find a puppy', link:'find.pug'}, {name:'<Seller Name>', link:''}]
+			include components/crumbs.pug
+			.seller
+				include components/contatc-seller_mobile.pug
+				.about
+					// При наличии у пользователя аватара профиля удалить класс STUB
+					.image.stub(style="background-image: url(../../img/boy.svg)")
+					h3.name Taya Jones
+					p.place New York, USA
+					.contacts-block
+						// Ссылка и название питомника отображаются только если заполнена графа KENNEL при регистрации пользователя
+						p.cattery-name Spolbo
+						a.website(href="")
+							span.link www.spolbo.com
+							svg.link-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-link")
+						a.button.contact-seller.js_write-message
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-envelope")
+							p.text Contact the seller
+					// Информация о питомнике отображаются только если заполнена графа KENNEL при регистрации пользователя
+					.cattery-description
+						.description#js_trancate-box 
+							p Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. <br> <br> We started breeding French Bulldog in partnership with. DSFBASKJBFDASFBelcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas.
+							a.show-more.js_more-info
+				.seller-dogs
+					-var elements = [{bg: '../img/puppy1.png', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '../img/puppy2.png', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Lily', gender: 'female', breed: 'Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Sweet Pea', gender: 'female', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}]
+					each dog in elements
+						.dog-block
+							// При наличии у фото собаки удалить класс STUB
+							if dog.bg
+								.image(style="background-image: url("+ dog.bg +")")
+							else
+								.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+							.info-block
+								svg(class="gender " + dog.gender)
+									use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+								.marks
+									.mark.sale For sale
+									.mark.stud For stud
+								h2.name= dog.name
+								.breed= dog.breed
+								.old= dog.age
+								.genetics
+									p.genetic= dog.gens
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+							.pricies
+								.sale
+									p.text Sale price
+									p.none
+								.stud
+									p.text Stud price
+									p.price 500 $
+							svg.like.js_like
+									use(xlink:href="../img/symbol_sprite.svg#icon-heart-background")
+				.seller-dogs_mobile
+					.seller-dogs_mobile__header
+					h1.seller-dogs_mobile__title Taya's dogs
+					p.seller-dogs_mobile__subtitle.seller-dogs_mobile__subtitle_empty
+					.seller-dogs_mobile__dogs.puppies.js_mobile-dogs__slider
+						-var elements = [{bg: '../img/puppy1.png', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '../img/puppy2.png', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Lily', gender: 'female', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}, {bg: '', name: 'Lily', gender: 'male', breed: 'French Bulldog', age: '2y 4m', gens: 'AtAy b Dd KbrKy eEm NS', cost: '2500 $'}]
+						each dog in elements
+							.puppy.seller-dogs_mobile__dogs__dog
+								if dog.bg
+									.image(style="background-image: url(" + dog.bg + ')')
+								else
+									.image.stub(style="background-image: url(../../img/dog-stub.svg)")
+								svg.like.js_like
+									use(xlink:href="../img/symbol_sprite.svg#icon-heart-background")
+								h2.name= dog.name
+								.info
+									svg(class="gender " + dog.gender)
+										use(xlink:href="../img/symbol_sprite.svg#icon-" + dog.gender)
+									.breed-age
+										p.breed= dog.breed
+										p.age= dog.age
+								.genetics
+									p.genetic= dog.gens
+									.help.js_help
+										svg.icon
+											use(xlink:href="../img/symbol_sprite_default.svg#icon-help")
+										a.help__link.js_help-block(href="") 
+											p.text About genotype
+											svg.arrow
+												use(xlink:href="../img/symbol_sprite.svg#icon-arrow-right")
+								p.cost.js_cost= dog.cost	
+					.pagination
+							svg.prev.disabled.js_prev-dog
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+							p.pages <span class="active js_active-element" data-active="1">1 </span>/ #{elements.length}
+							-var max = elements.length
+							svg.next.js_next-dog(data-end= max)
+								use(xlink:href='../img/symbol_sprite.svg#icon-arrow-right')
+		footer.js_saler_mobile
+			include components/footer.pug
+		include components/contact-seller.pug
+	

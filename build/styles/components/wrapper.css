@@ -1,0 +1,12 @@
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #f3e8eadb;
+  margin-top: 70px;
+  padding: 164px 30px 0; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndyYXBwZXIuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQWM7RUFBZCxxQkFBYztFQUFkLGNBQWM7RUFDZCx5QkFBd0I7RUFBeEIsc0JBQXdCO0VBQXhCLHdCQUF3QjtFQUN4Qiw0QkFBNEI7RUFDNUIsaUJBQWlCO0VBQ2pCLHNCQUFzQixFQUFFIiwiZmlsZSI6ImNvbXBvbmVudHMvd3JhcHBlci5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFubmVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmM2U4ZWFkYjtcbiAgbWFyZ2luLXRvcDogNzBweDtcbiAgcGFkZGluZzogMTY0cHggMzBweCAwOyB9XG4iXX0= */

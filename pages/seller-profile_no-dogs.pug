@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+html(lang="en")
+	include components/head.pug 
+	body
+		header.js_header
+			include components/header.pug
+		.main-container.user_in
+			-var crumbList = [{name:'Home', link:'main.html'}, {name:'My account', link:'#'}]
+			include components/crumbs.pug
+			.seller
+				.about
+					// При наличии у пользователя аватара профиля удалить класс STUB
+					.image.stub(style="background-image: url(../../img/boy.svg)")
+					h3.name Taya Jones
+					.tariff-plan_mobile
+							svg.tariff-plan_mobile__icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-star")
+							.tariff-plan_mobile__info
+								p.term 12 month
+								p.remaining 246 of 365 days remaining
+							.button.tariff-plan_mobile__update
+								a.link Update plan
+					.button.edit-account
+						a.link(href="") Edit my account
+					p.place New York, USA
+					.contacts-block.my-contacts
+						// Ссылка и название питомника отображаются только если заполнена графа KENNEL при регистрации пользователя
+						p.cattery-name Spolbo
+						a.website.my-profile__website(href="")
+							span.link www.spolbo.com
+							svg.link-icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-link")
+
+						.phone
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-phone")
+							p.text +7 123 456-78-90
+						.email
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-envelope")
+							p.text a_dementiev@gmail.com
+					// Информация о питомнике отображаются только если заполнена графа KENNEL при регистрации пользователя
+					.cattery-description
+						.description#js_trancate-box 
+							p Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. <br> <br> We started breeding French Bulldog in partnership with. DSFBASKJBFDASFBelcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas. Welcome To Spolbo Chihuahuas  and French Bulldogs bred, shown, owned and loved by Marina Kanevski and Alexandra Dementiev. We have raised, showed and bred French Bulldogs for the last 20 years and now we added another breed to our family: Chihuahuas.
+							a.show-more.js_more-info
+					.button.edit-account.edit-account_mobile
+						a.link(href="") Edit my account
+					.button.add-dog.add-dog_mobile.hide
+						a.link(href="") Add a dog
+				.seller-dogs
+					.tariff-plan
+							svg.icon
+								use(xlink:href="../img/symbol_sprite.svg#icon-star")
+							.info
+								p.term 12 month
+								p.remaining 246 of 365 days remaining
+							.button.tariff_update
+								a.link Update plan
+					.no-dogs-stub
+						svg.doggy-home
+							use(xlink:href="../img/symbol_sprite.svg#icon-doggy-home")
+						p.notyfication-text You can add up to 3 dogs to your account.
+						a.button.add-dog(href="") Add a dog		
+				.no-dogs-stub_mobile.no-dogs-stub
+						svg.doggy-home
+							use(xlink:href="../img/symbol_sprite.svg#icon-doggy-home")
+						p.notyfication-text You can add up to 3 dogs to your account.
+						a.button.add-dog(href="") Add a dog				
+		footer
+			include components/footer.pug
+		include components/contact-seller.pug
+	
